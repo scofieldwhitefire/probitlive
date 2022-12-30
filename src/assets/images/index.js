@@ -99,6 +99,7 @@ import tmlg02 from "./team/tm/lg-02.jpg";
 import tmlg03 from "./team/tm/lg-03.jpg";
 import faq02 from "./faq/02.png";
 import location from "./contact/shape/location.svg";
+import a404 from "./contact/shape/404.png";
 
 export const Logos = {
   logo1,
@@ -204,4 +205,5 @@ export const Images = {
   tmlg03,
   faq02,
   location,
+  a404.
 };

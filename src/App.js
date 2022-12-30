@@ -12,6 +12,7 @@ import Blogs from "pages/Blogs";
 import BlogDetails from "pages/BlogDetails";
 import About from "pages/About";
 import Contact from "pages/Contact";
+import NotFound from "pages/NotFound";
 
 const js = [
   { path: "js/vendor", file: "jquery.min.js" },
@@ -59,6 +60,7 @@ const App = () => {
           <Route path="/blogs/:blogname" element={<BlogDetails />} />
           <Route path="/about-us" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
           {/* <Route path="/account" element={<Homex />} /> */}
         </Routes>
       </Router>
