@@ -205,5 +205,5 @@ export const Images = {
   tmlg03,
   faq02,
   location,
-  a404.
+  a404,
 };
