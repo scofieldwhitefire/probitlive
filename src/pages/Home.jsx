@@ -453,7 +453,7 @@ const Home = () => {
               <div className="cta-one-inner">
                 <div className="cta-left">
                   <h3 className="title">
-                    Let’s discuss about how we can help make your business
+                    Let’s discuss about how we can help make your trading
                     better
                   </h3>
                 </div>
@@ -749,7 +749,7 @@ const Home = () => {
       {/* <!-- start gallery section --> */}
 
       {/* <!-- start trusted client section --> */}
-      <div className="rts-trusted-client rts-section-gapBottom">
+      {/* <div className="rts-trusted-client rts-section-gapBottom">
         <div className="container">
           <div className="row">
             <div className="col-12">
@@ -781,11 +781,11 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* <!-- end trusted client section --> */}
 
       {/* <!-- start team section --> */}
-      <div className="rts-team-area rts-section-gap bg-team">
+      {/* <div className="rts-team-area rts-section-gap bg-team">
         <div className="container">
           <div className="row">
             <div className="col-12">
@@ -902,11 +902,11 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* <!-- end team section --> */}
 
       {/* <!-- rts features area start --> */}
-      <div className="rts-feature-area rts-section-gap">
+      <div className="rts-team-area rts-section-gap">
         <div className="container-fluid padding-controler plr--120">
           <div className="row bg-white-feature  pt--120 pb--120">
             <div className="col-xl-6 col-lg-12">

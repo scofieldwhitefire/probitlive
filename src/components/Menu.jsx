@@ -70,12 +70,12 @@ const Menu = () => {
                       </div>
                     </div>
                   </div>
-                  <a
-                    href="#"
+                  <Link
+                    to="/login"
                     className="rts-btn btn-primary ml--20 ml_sm--5 header-one-btn quote-btn"
                   >
                     Login
-                  </a>
+                  </Link>
                   <button
                     id="menu-btn"
                     className="menu rts-btn btn-primary-alta ml--20 ml_sm--5"

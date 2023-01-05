@@ -13,6 +13,11 @@ import BlogDetails from "pages/BlogDetails";
 import About from "pages/About";
 import Contact from "pages/Contact";
 import NotFound from "pages/NotFound";
+import Login from "pages/accounts/Login";
+import Register from "pages/accounts/Register";
+import Forget from "pages/accounts/Forget";
+import Dashboard from "pages/dashboard/Dashboard";
+import { checkAuth } from "features/users";
 
 const js = [
   { path: "js/vendor", file: "jquery.min.js" },
@@ -24,30 +29,32 @@ const js = [
   { path: "js/vendor", file: "bootstrap.min.js" },
   { path: "js/plugins", file: "contact.form.js" },
   { path: "js", file: "main.js" },
+  { path: "js/login", file: "main.js" },
 ];
 
 const App = () => {
   const dispatch = useDispatch();
-    const [ch, setCh] = useState(!0);
+  const [ch, setCh] = useState(!0);
+  const [ch2, setCh2] = useState(!0);
 
-    const AddScript = (x, y) => {
-      if (!document.querySelector(`[src="/assets/${x}/${y}"]`)) {
-        const script = document.createElement("script");
-        script.src = `/assets/${x}/${y}`;
-        script.async = !1;
-        document.body.appendChild(script);
-      }
-    };
+  const AddScript = (x, y) => {
+    if (!document.querySelector(`[src="/assets/${x}/${y}"]`)) {
+      const script = document.createElement("script");
+      script.src = `/assets/${x}/${y}`;
+      script.async = !1;
+      document.body.appendChild(script);
+    }
+  };
 
-    useEffect(() => {
-      for (let i = 0; i < js.length; i++) {
-        AddScript(js[i].path, js[i].file);
-      }
-    }, [ch]);
+  useEffect(() => {
+    for (let i = 0; i < js.length; i++) {
+      AddScript(js[i].path, js[i].file);
+    }
+  }, [ch]);
 
-  // useEffect(() => {
-  //   dispatch(checkAuth());
-  // }, [ch]);
+  useEffect(() => {
+    dispatch(checkAuth());
+  }, [ch2]);
   return (
     <>
       <Router>
@@ -60,6 +67,12 @@ const App = () => {
           <Route path="/blogs/:blogname" element={<BlogDetails />} />
           <Route path="/about-us" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/forget-password" element={<Forget />} />
+          {/* Dashboard */}
+          <Route path="/dashboard" element={<Dashboard />} />
+          {/* 404 */}
           <Route path="*" element={<NotFound />} />
           {/* <Route path="/account" element={<Homex />} /> */}
         </Routes>
