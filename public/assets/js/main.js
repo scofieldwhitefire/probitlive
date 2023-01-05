@@ -921,9 +921,11 @@
           });
         },
         preloader:function(){
-          window.addEventListener('load',function(){
+          setTimeout(() => {
             document.querySelector('body').classList.add("loaded")  
-          });          
+          }, 3200);
+          // window.addEventListener('load',function(){
+          // });          
         },
         menuActive:function(){
           $(document).on('click', '#menu-btn', function () {
