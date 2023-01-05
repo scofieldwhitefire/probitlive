@@ -1,4 +1,4 @@
-
+    // setInterval(() => {
 (function ($) {
     'use strict';
   
@@ -38,9 +38,9 @@
                 shortSwipes: false,
                 longSwipes: false,
                 effect: 'fade',
-                speed:500,
+                speed:300,
                 autoplay: {
-                    delay: 4000,
+                    delay: 8000,
                 },                
               });
           });
@@ -1032,4 +1032,18 @@
     }
   
     imJs.m();
-  })(jQuery, window)  
+    // setInterval(() => {
+
+      // const $id = $("#anywhere-home");
+      // const $class = $id.attr("class");
+      // console.log($class)
+      // const x = setTimeout(() => {
+        // if ($class !== "initReload") {
+          // await imJs.m();
+          // imJs.m();
+          // $id.attr({ class: "initReload" });
+          // clearTimeout(x);
+        // }
+      // }, 300);
+    })(jQuery, window)  
+  // }, 1000);
