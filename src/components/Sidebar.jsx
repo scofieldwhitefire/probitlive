@@ -110,12 +110,12 @@ const Sidebar = () => {
               </a>
               {/* <!-- <a href="#"><i className="fab fa-linkedin"></i></a> --> */}
             </div>
-            <a
-              href="#"
+            <Link
+              to="/login"
               className="rts-btn btn-primary ml--20 ml_sm--5 header-one-btn quote-btnmenu"
             >
               Login
-            </a>
+            </Link>
             <a
               href="#"
               className="rts-btn btn-primary ml--20 ml_sm--5 header-one-btn quote-btnmenu"

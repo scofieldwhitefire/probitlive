@@ -41,7 +41,7 @@ const Plans = () => {
       {/* <!-- end breadcrumb area --> */}
 
       {/* <!-- start pricing area --> */}
-      <div className="rts-pricing-area rts-section-gapBottom">
+      <div className="rts-pricing-area rts-section-gap">
         <div className="container">
           <div className="row">
             <div className="col-12">

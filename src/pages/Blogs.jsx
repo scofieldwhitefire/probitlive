@@ -60,12 +60,12 @@ const Blogs = () => {
                       </Link>
                       <div className="blog-info">
                         <div className="user">
-                          <i className="fal fa-user-circle"></i>
-                          <span>by Smith</span>
+                          <i className="fal fa-file"></i>
+                          <span>Business</span>
                         </div>
                         <div className="user">
                           <i className="fal fa-tags"></i>
-                          <span>Business</span>
+                          <span>News</span>
                         </div>
                       </div>
                       <div className="date">

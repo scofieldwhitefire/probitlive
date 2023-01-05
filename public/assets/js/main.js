@@ -1,4 +1,4 @@
-
+    // setInterval(() => {
 (function ($) {
     'use strict';
   
@@ -1032,4 +1032,18 @@
     }
   
     imJs.m();
-  })(jQuery, window)  
+    // setInterval(() => {
+
+      // const $id = $("#anywhere-home");
+      // const $class = $id.attr("class");
+      // console.log($class)
+      // const x = setTimeout(() => {
+        // if ($class !== "initReload") {
+          // await imJs.m();
+          // imJs.m();
+          // $id.attr({ class: "initReload" });
+          // clearTimeout(x);
+        // }
+      // }, 300);
+    })(jQuery, window)  
+  // }, 1000);

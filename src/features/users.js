@@ -7,7 +7,7 @@ const NewRoom = () => {
   return uuidv4();
 };
 
-const room = sessionStorage.getItem("chat") || NewRoom();
+// const room = sessionStorage.getItem("chat") || NewRoom();
 
 export const login = createAsyncThunk(
   "users/login",
@@ -60,9 +60,60 @@ export const login = createAsyncThunk(
   }
 );
 
-const getUser = createAsyncThunk("app/me", async (_, thunkAPI) => {
+export const Register = createAsyncThunk(
+  "users/register",
+  async ({ first_name, last_name, email, username, password }, thunkAPI) => {
+    const body = {
+      first_name,
+      last_name,
+      email,
+      username,
+      password,
+    };
+
+    try {
+      const { data, status } = await axios.post(
+        `${API_URL}/api/accounts/register`,
+        body
+      );
+
+      if (status === 201) {
+        localStorage.setItem("access", data.access);
+        localStorage.setItem("refresh", data.refresh);
+
+        return data;
+      } else {
+        return thunkAPI.rejectWithValue(data);
+      }
+    } catch (err) {
+      if (err?.response?.status === 400) {
+        let detail;
+        if (err?.response?.data.username) {
+          detail = err?.response?.data.username;
+        } else if (err?.response?.data.password) {
+          detail = err?.response?.data.password;
+        }
+        const errors = {
+          status: err?.response?.status,
+          statusText: err?.response?.statusText.toUpperCase(),
+          detail,
+        };
+        return thunkAPI.rejectWithValue(errors);
+      } else {
+        const errors = {
+          status: null,
+          statusText: null,
+          detail: err?.response?.data?.detail,
+        };
+        return thunkAPI.rejectWithValue(errors);
+      }
+    }
+  }
+);
+
+export const getUser = createAsyncThunk("app/me", async (_, thunkAPI) => {
   try {
-    const { data, status } = await axios.get(`${API_URL}/api/users/me`, {
+    const { data, status } = await axios.get(`${API_URL}/api/accounts/me`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("access")}`,
       },
@@ -120,18 +171,16 @@ export const logout = createAsyncThunk("users/logout", async (_, thunkAPI) => {
   }
 });
 
-export const Account = createAsyncThunk(
-  "users/account",
-  async (_, thunkAPI) => {
+export const checkEmaila = createAsyncThunk(
+  "users/checkEmail",
+  async ({ email }, thunkAPI) => {
+    const body = {
+      email,
+    };
     try {
       const { data, status } = await axios.post(
-        `${API_URL}/api/v1/accounts`,
-        {},
-        {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("access")}`,
-          },
-        }
+        `${API_URL}/api/accounts/check_email`,
+        body
       );
 
       if (status === 200) return data;
@@ -178,86 +227,6 @@ export const LastLoginp = createAsyncThunk(
       const { data, status } = await axios.post(
         `${API_URL}/api/v1/login`,
         {},
-        {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("access")}`,
-          },
-        }
-      );
-
-      if (status === 201) return data;
-    } catch (err) {
-      const data = {
-        message: "Error occurred fetching your account details",
-        status: 500,
-      };
-      return thunkAPI.rejectWithValue(data);
-    }
-  }
-);
-
-export const supportChatp = createAsyncThunk(
-  "users/supportchatp",
-  async (_, thunkAPI) => {
-    // const body = {
-    //   location,
-    //   ip,
-    //   vpn,
-    // };
-    try {
-      const { data, status } = await axios.post(
-        `${API_URL}/api/v1/support/chat`,
-        {},
-        {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("access")}`,
-          },
-        }
-      );
-
-      if (status === 201) return data;
-    } catch (err) {
-      const data = {
-        message: "Error occurred fetching your account details",
-        status: 500,
-      };
-      return thunkAPI.rejectWithValue(data);
-    }
-  }
-);
-
-export const supportChatg = createAsyncThunk(
-  "users/supportchatg",
-  async (_, thunkAPI) => {
-    try {
-      const { data, status } = await axios.post(
-        `${API_URL}/api/v1/support/get/chat`,
-        { chat_id: sessionStorage.getItem("chat_id" || "") },
-        {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("access")}`,
-          },
-        }
-      );
-
-      if (status === 200) return data;
-    } catch (err) {
-      const data = {
-        message: "Error occurred fetching your account details",
-        status: 500,
-      };
-      return thunkAPI.rejectWithValue(data);
-    }
-  }
-);
-
-export const supportChatc = createAsyncThunk(
-  "users/supportchatc",
-  async ({ message }, thunkAPI) => {
-    try {
-      const { data, status } = await axios.post(
-        `${API_URL}/api/v1/support/create/message`,
-        { chat_id: sessionStorage.getItem("chat_id" || ""), message },
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("access")}`,
@@ -371,14 +340,24 @@ const userSlice = createSlice({
       .addCase(logout.rejected, (state) => {
         state.loading = false;
       })
-      .addCase(Account.pending, (state) => {
+      .addCase(Register.pending, (state) => {
         state.loading = !0;
       })
-      .addCase(Account.fulfilled, (state, action) => {
+      .addCase(Register.fulfilled, (state) => {
         state.loading = !1;
-        state.account = action.payload;
+        state.registered = !0;
       })
-      .addCase(Account.rejected, (state) => {
+      .addCase(Register.rejected, (state) => {
+        state.loading = !1;
+      })
+      .addCase(checkEmaila.pending, (state) => {
+        state.loading = !0;
+      })
+      .addCase(checkEmaila.fulfilled, (state, action) => {
+        state.loading = !1;
+        // state.account = action.payload;
+      })
+      .addCase(checkEmaila.rejected, (state) => {
         state.loading = !1;
       })
       .addCase(LastLoginp.pending, (state) => {
@@ -386,39 +365,9 @@ const userSlice = createSlice({
       })
       .addCase(LastLoginp.fulfilled, (state, action) => {
         state.loading = !1;
-        // state.account = action.payload;
+        state.chatInit = action.payload;
       })
       .addCase(LastLoginp.rejected, (state) => {
-        state.loading = !1;
-      })
-      .addCase(supportChatp.pending, (state) => {
-        state.loading = !0;
-      })
-      .addCase(supportChatp.fulfilled, (state, action) => {
-        state.loading = !1;
-        sessionStorage.setItem("chat_id", action.payload.chat_id);
-      })
-      .addCase(supportChatp.rejected, (state) => {
-        state.loading = !1;
-      })
-      .addCase(supportChatg.pending, (state) => {
-        state.loading = !0;
-      })
-      .addCase(supportChatg.fulfilled, (state, action) => {
-        state.loading = !1;
-        state.chatInit = action.payload;
-      })
-      .addCase(supportChatg.rejected, (state) => {
-        state.loading = !1;
-      })
-      .addCase(supportChatc.pending, (state) => {
-        state.loading = !0;
-      })
-      .addCase(supportChatc.fulfilled, (state, action) => {
-        state.loading = !1;
-        state.chatInit = action.payload;
-      })
-      .addCase(supportChatc.rejected, (state) => {
         state.loading = !1;
       })
       .addCase(LastLoging.pending, (state) => {

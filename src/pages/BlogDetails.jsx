@@ -7,9 +7,9 @@ import React from "react";
 import { useParams } from "react-router-dom";
 
 const BlogDetails = () => {
-    const params = useParams()
-    const dBlog = params.blogname;
-    console.log(dBlog)
+  const params = useParams();
+  const dBlog = params.blogname;
+  console.log(dBlog);
   return (
     <>
       {/* <!-- start header area --> */}
@@ -53,33 +53,32 @@ const BlogDetails = () => {
               {/* <!-- single post --> */}
               <div className="blog-single-post-listing details mb--0">
                 <div className="thumbnail">
-                  <img
-                    src={Images.blogbloglg1}
-                    alt="Business-Blog"
-                  />
+                  <img src={Images.blogbloglg1} alt="Business-Blog" />
                 </div>
                 <div className="blog-listing-content">
                   <div className="user-info">
                     {/* <!-- single info --> */}
                     <div className="single">
-                      <i className="far fa-user-circle"></i>
-                      <span>by David Smith</span>
+                      <i className="far fa-clock"></i>
+                      <span>Jan 12, 2022</span>
                     </div>
-                    {/* <!-- single infoe end --> */}
+                    {/* <!-- single info end --> */}
                     {/* <!-- single info --> */}
                     <div className="single">
-                      <i className="far fa-clock"></i>
-                      <span>by David Smith</span>
+                      <i className="far fa-file"></i>
+                      <span>Business</span>
                     </div>
-                    {/* <!-- single infoe end --> */}
+                    {/* <!-- single info end --> */}
                     {/* <!-- single info --> */}
                     <div className="single">
                       <i className="far fa-tags"></i>
-                      <span>by David Smith</span>
+                      <span>News</span>
                     </div>
-                    {/* <!-- single infoe end --> */}
+                    {/* <!-- single info end --> */}
                   </div>
-                  <h3 className="title">Profitable business makes your profit</h3>
+                  <h3 className="title">
+                    Profitable business makes your profit
+                  </h3>
                   <p className="disc para-1">
                     Collaboratively pontificate bleeding edge resources with
                     inexpensive methodologies globally initiate
@@ -98,7 +97,7 @@ const BlogDetails = () => {
                     mauris, eros porta blandit curabitur ullamcorper varius
                   </p>
                   {/* <!-- quote area start --> */}
-                  <div className="rts-quote-area text-center">
+                  {/* <div className="rts-quote-area text-center">
                     <h5 className="title">
                       “Placerat pretium tristique mattis tellus accuan metus
                       dictumst vivamus odio nulla fusce auctor into suscipit
@@ -108,7 +107,7 @@ const BlogDetails = () => {
                       Daniel X. Horrar
                     </a>
                     <span>Author</span>
-                  </div>
+                  </div> */}
                   {/* <!-- quote area end --> */}
 
                   <p className="disc">
@@ -123,7 +122,7 @@ const BlogDetails = () => {
                     quam, ad est cubilia mauris himenaeos nascetur vestibulum.
                   </p>
 
-                  <div className="row g-5">
+                  {/* <div className="row g-5">
                     <div className="col-lg-6 col-md-6">
                       <div className="thumbnail details">
                         <img
@@ -140,11 +139,11 @@ const BlogDetails = () => {
                         />
                       </div>
                     </div>
-                  </div>
+                  </div> */}
 
-                  <h4 className="title mt--40 mt_sm--20">
+                  {/* <h4 className="title mt--40 mt_sm--20">
                     Ultimate Business Strategy Solution
-                  </h4>
+                  </h4> */}
                   <p className="disc mb--25">
                     Gravida maecenas lobortis suscipit mus sociosqu convallis,
                     mollis vestibulum donec aliquam risus sapien ridiculus,
@@ -152,56 +151,6 @@ const BlogDetails = () => {
                     iaculis posuere per mauris, eros porta blandit curabitur
                     ullamcorper varius nostra ante risus egestas.
                   </p>
-                  <div className="row align-items-center">
-                    <div className="col-lg-5">
-                      <div className="thumbnail details mb_sm--15">
-                        <img
-                          src={Images.blogdetails03}
-                          alt="finbiz_buseness"
-                        />
-                      </div>
-                    </div>
-                    <div className="col-lg-7">
-                      <div className="check-area-details">
-                        {/* <!-- single check --> */}
-                        <div className="single-check">
-                          <i className="far fa-check-circle"></i>
-                          <span>
-                            How will activities traditional manufacturing
-                          </span>
-                        </div>
-                        {/* <!-- single check End --> */}
-                        {/* <!-- single check --> */}
-                        <div className="single-check">
-                          <i className="far fa-check-circle"></i>
-                          <span>
-                            All these digital and projects aim to enhance
-                          </span>
-                        </div>
-                        {/* <!-- single check End --> */}
-                        {/* <!-- single check --> */}
-                        <div className="single-check">
-                          <i className="far fa-check-circle"></i>
-                          <span>
-                            I monitor my software that takes screenshots
-                          </span>
-                        </div>
-                        {/* <!-- single check End --> */}
-                        {/* <!-- single check --> */}
-                        <div className="single-check">
-                          <i className="far fa-check-circle"></i>
-                          <span>Laoreet dolore niacin sodium glutimate</span>
-                        </div>
-                        {/* <!-- single check End --> */}
-                        {/* <!-- single check --> */}
-                        <div className="single-check">
-                          <i className="far fa-check-circle"></i>
-                          <span>Minim veniam sodium glutimate nostrud</span>
-                        </div>
-                        {/* <!-- single check End --> */}
-                      </div>
-                    </div>
-                  </div>
                   <p className="disc mt--30">
                     Cubilia hendrerit luctus sem aptent curae gravida maecenas
                     eleifend nunc nec vitae morbi sodales fusce tristique aenean
@@ -239,26 +188,15 @@ const BlogDetails = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="author-area">
-                    <div className="thumbnail details mb_sm--15">
-                      <img
-                        src={Images.blogdetailsauthor}
-                        alt="finbiz_buseness"
-                      />
-                    </div>
-                    <div className="author-details team">
-                      <span>Brand Designer</span>
-                      <h5>Angelina H. Dekato</h5>
-                      <p className="disc">
-                        Nullam varius luctus pharetra ultrices volpat facilisis
-                        donec tortor, nibhkisys habitant curabitur at nunc nisl
-                        magna ac rhoncus vehicula sociis tortor nist hendrerit
-                        molestie integer.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="replay-area-details">
-                    <h4 className="title">Leave a Reply</h4>
+                  <div
+                    className="replay-area-details"
+                    style={{
+                      borderTop: "1px solid #E6E9F0",
+                    }}
+                  >
+                    <h4 className="title" style={{ paddingTop: "15px" }}>
+                      Leave a Reply
+                    </h4>
                     <form action="#">
                       <div className="row g-4">
                         <div className="col-lg-6">
