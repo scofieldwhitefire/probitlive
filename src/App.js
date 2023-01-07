@@ -30,6 +30,7 @@ const js = [
   { path: "js/plugins", file: "contact.form.js" },
   { path: "js", file: "main.js" },
   { path: "js/login", file: "main.js" },
+  { path: "js", file: "init.js" },
 ];
 
 const App = () => {

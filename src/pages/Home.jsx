@@ -20,7 +20,6 @@ const Home = () => {
   let [n, setN] = useState(1);
 
   let tvScriptLoadingPromise;
-  let tvScriptLoadingPromises;
 
   const showCharts = (x='init') => {
     if (x === "next") {
@@ -58,18 +57,6 @@ const Home = () => {
       });
     }
     
-    if (!tvScriptLoadingPromises) {
-      tvScriptLoadingPromises = new Promise((resolve) => {
-        const script2 = document.createElement("script");
-        script2.id = "tradingview-widget-loading-script";
-        script2.src = "https://s3.tradingview.com/external-embedding/embed-widget-tickers.js";
-        script2.type = "text/javascript";
-        script2.onload = resolve;
-
-        document.head.appendChild(script2);
-      });
-    }
-
     tvScriptLoadingPromise.then(
       () => {
         onLoadScriptRef.current && onLoadScriptRef.current()
@@ -77,11 +64,9 @@ const Home = () => {
         onLoadScriptTRef.current && onLoadScriptTRef.current()
         }
     );
-    tvScriptLoadingPromises.then(
-      () => onLoadScriptRef2.current && onLoadScriptRef2.current()
-    );
 
-    return () => ([onLoadScriptRef.current, onLoadScriptSRef.current, onLoadScriptTRef.current, onLoadScriptRef2.current] = null);
+    // return () => ([onLoadScriptRef.current, onLoadScriptSRef.current, onLoadScriptTRef.current, onLoadScriptRef2.current] = null);
+    return () => (onLoadScriptRef.current = null);
 
     function firstTrade() {
       const first_trade = document.getElementById("tradingview_848b8");
@@ -279,6 +264,7 @@ const Home = () => {
         </div>
       </div>
       {/* <!-- banner blank space area end --> */}
+      <div id="scrollChart"></div>
       {/* <div class="tradingview-widget-container">
   <div class="tradingview-widget-container__widget"></div>
   <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
@@ -375,37 +361,6 @@ const Home = () => {
                   </div>
                 </div>
                 {/* <!-- start about success area --> */}
-
-                {
-                  {
-                  symbols: [
-                    {
-                      proName: "FOREXCOM:SPXUSD",
-                      "title": "S&P 500"
-                    },
-                    {
-                      proName: "FOREXCOM:NSXUSD",
-                      "title": "US 100"
-                    },
-                    {
-                      proName: "FX_IDC:EURUSD",
-                      "title": "EUR/USD"
-                    },
-                    {
-                      proName: "BITSTAMP:BTCUSD",
-                      "title": "Bitcoin"
-                    },
-                    {
-                      proName: "BITSTAMP:ETHUSD",
-                      "title": "Ethereum"
-                    }
-                  ],
-                  colorTheme: "light",
-                  isTransparent: !1,
-                  showSymbolLogo: !0,
-                  locale: "en"
-                }
-                }
 
                 {/* <!-- about founder & get in touch start --> */}
                 <div className="row about-founder-wrapper align-items-center mt--40">
