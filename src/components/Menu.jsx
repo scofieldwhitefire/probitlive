@@ -14,7 +14,7 @@ const Menu = () => {
               <div className="thumbnail">
                 <Link to="/">
                   {/* <img src={Logos.logo1} alt="pro-logo" /> */}
-                  <h4 style={{fontSize: '32px'}}>
+                  <h4 className="text-[22px] lg:text-[32px] font-bold">
                     Pro<span style={{ color: "#DF0A0A" }}>Bit</span>Live
                   </h4>
                 </Link>
@@ -29,11 +29,11 @@ const Menu = () => {
                         Services
                       </Link>
                     </li>
-                    <li>
+                    {/* <li>
                       <Link className="nav-item" to="/plans">
                         Prices & Plan
                       </Link>
-                    </li>
+                    </li> */}
                     <li>
                       <Link className="nav-item" to="/faqs">
                         FAQs

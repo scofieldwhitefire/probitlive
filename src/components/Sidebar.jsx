@@ -13,16 +13,28 @@ const Sidebar = () => {
         {/* <!-- inner menu area desktop start --> */}
         <div className="rts-sidebar-menu-desktop">
           <Link className="logo-1" to="/">
-            <img className="logo" src={Logos.logo1} alt="pro_logo" />
+            {/* <img className="logo" src={Logos.logo1} alt="pro_logo" /> */}
+            <h4 className="text-[28px] lg:text-[32px] font-bold mt-4">
+                    Pro<span style={{ color: "#DF0A0A" }}>Bit</span>Live
+                  </h4>
           </Link>
           <Link className="logo-2" to="/">
-            <img className="logo" src={Logos.logo4} alt="pro_logo" />
+            {/* <img className="logo" src={Logos.logo4} alt="pro_logo" /> */}
+            <h4 className="text-[28px] lg:text-[32px] font-bold mt-4">
+                    Pro<span style={{ color: "#DF0A0A" }}>Bit</span>Live
+                  </h4>
           </Link>
           <Link className="logo-3" to="/">
-            <img className="logo" src={Logos.logo3} alt="pro_logo" />
+            {/* <img className="logo" src={Logos.logo3} alt="pro_logo" /> */}
+            <h4 className="text-[28px] lg:text-[32px] font-bold mt-4">
+                    Pro<span style={{ color: "#DF0A0A" }}>Bit</span>Live
+                  </h4>
           </Link>
           <Link className="logo-4" to="/">
-            <img className="logo" src={Logos.logo5} alt="pro_logo" />
+            {/* <img className="logo" src={Logos.logo5} alt="pro_logo" /> */}
+            <h4 className="text-[28px] lg:text-[32px] font-bold mt-4">
+                    Pro<span style={{ color: "#DF0A0A" }}>Bit</span>Live
+                  </h4>
           </Link>
           <div className="body d-none d-xl-block">
             <p className="disc">
@@ -37,26 +49,26 @@ const Sidebar = () => {
                 {/* <!-- single --> */}
                 <div className="single">
                   <i className="fas fa-phone-alt"></i>
-                  <a href="#">+8801234566789</a>
+                  <a href="#">+123456789</a>
                 </div>
                 {/* <!-- single ENd --> */}
                 {/* <!-- single --> */}
                 <div className="single">
                   <i className="fas fa-envelope"></i>
-                  <a href="#">example@gmail.com</a>
+                  <a href="#">support@probitlive.com</a>
                 </div>
                 {/* <!-- single ENd --> */}
                 {/* <!-- single --> */}
                 <div className="single">
                   <i className="fas fa-globe"></i>
-                  <a href="#">www.webexample.com</a>
+                  <a href="#">www.probitlive.com</a>
                 </div>
                 {/* <!-- single ENd --> */}
                 {/* <!-- single --> */}
-                <div className="single">
+                {/* <div className="single">
                   <i className="fas fa-map-marker-alt"></i>
                   <a href="#">13/A, New Pro State, NYC</a>
-                </div>
+                </div> */}
                 {/* <!-- single ENd --> */}
               </div>
               <div className="social-wrapper-two menu">
@@ -82,9 +94,9 @@ const Sidebar = () => {
                 <li>
                   <Link to="/services">Services</Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link to="/plans">Price & Plan</Link>
-                </li>
+                </li> */}
                 <li>
                   <Link to="/faqs">FAQs</Link>
                 </li>
@@ -119,20 +131,20 @@ const Sidebar = () => {
                 Dashboard
               </Link>
             ) : (
-              <>
+              <div className="flex">
                 <Link
                   to="/login"
-                  className="rts-btn btn-primary ml--20 ml_sm--5 header-one-btn quote-btnmenu"
-                >
+                  className="mx-2 px-4 rts-btn btn-primary ml--20 ml_sm--5 header-one-btn quote-btnmenu"
+                > 
                   Login
                 </Link>
                 <Link
                   to="/register"
-                  className="rts-btn btn-primary ml--20 ml_sm--5 header-one-btn quote-btnmenu"
+                  className="mx-2 px-4 rts-btn btn-primary ml--20 ml_sm--5 header-one-btn quote-btnmenu"
                 >
                   Register
                 </Link>
-              </>
+              </div>
             )}
           </div>
         </div>

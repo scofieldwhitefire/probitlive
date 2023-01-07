@@ -1,48 +1,68 @@
-$("#scrollChart").append.html(`
+$("#scrollChart").append(`
 <div class="tradingview-widget-container">
   <div class="tradingview-widget-container__widget"></div>
-  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-tickers.js" async>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
   {
   "symbols": [
     {
-        "description": "",
-        "proName": "BINANCE:SOLUSDT"
+      "proName": "FOREXCOM:SPXUSD",
+      "title": "S&P 500"
     },
     {
-        "description": "",
-        "proName": "BINANCE:BTCUSDT"
+      "proName": "FOREXCOM:NSXUSD",
+      "title": "US 100"
     },
     {
-        "description": "",
-        "proName": "BINANCE:GRTUSDT"
+      "proName": "FX_IDC:EURUSD",
+      "title": "EUR/USD"
     },
     {
-        "description": "",
-        "proName": "BINANCE:BNBUSDT"
+      "proName": "BITSTAMP:BTCUSD",
+      "title": "Bitcoin"
     },
     {
-        "description": "",
-        "proName": "BINANCE:AXSUSDT"
+      "proName": "BITSTAMP:ETHUSD",
+      "title": "Ethereum"
     },
     {
-        "description": "",
-        "proName": "BITFINEX:BTCUSD"
+        "proName": "BINANCE:SOLUSDT",
+        "title": ""
     },
     {
-        "description": "",
-        "proName": "BINANCE:DOTUSDT"
+        "proName": "BINANCE:BTCUSDT",
+        "title": ""
     },
     {
-        "description": "",
-        "proName": "BINANCE:ICPUSDT"
+        "proName": "BINANCE:GRTUSDT",
+        "title": ""
+    },
+    {
+        "proName": "BINANCE:BNBUSDT",
+        "title": ""
+    },
+    {
+        "proName": "BINANCE:AXSUSDT",
+        "title": ""
+    },
+    {
+        "proName": "BITFINEX:BTCUSD",
+        "title": ""
+    },
+    {
+        "proName": "BINANCE:DOTUSDT",
+        "title": ""
+    },
+    {
+        "proName": "BINANCE:ICPUSDT",
+        "title": ""
     }
-    ],
+  ],
+  "showSymbolLogo": true,
   "colorTheme": "light",
   "isTransparent": false,
-  "showSymbolLogo": true,
+  "displayMode": "compact",
   "locale": "en"
 }
   </script>
 </div>
-<!-- TradingView Widget END -->
 `);
