@@ -1,7 +1,25 @@
 import { Images } from 'assets/images';
-import React from 'react'
+import React, { useState } from 'react'
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+
+const initial = {
+  email: ""
+}
 
 const Footer = () => {
+    const [formData, setFormData] = useState(initial);
+      const { isAuthenticated } = useSelector((state) => state.user);
+
+    const { email } = formData;
+
+    const onChange = (e) => {
+      setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+  const onSubmit = (e) => {
+    e.preventDefault()
+  }
   return (
     <>
       {/* <!-- rts footer area start --> */}
@@ -16,17 +34,19 @@ const Footer = () => {
                     {/* <!-- cta-left --> */}
                     <div className="col-lg-6">
                       <div className="cta-left-wrapepr">
-                        <p className="cta-disc">Latest Business Ideas</p>
-                        <h3 className="title">Sign Up Newsletter</h3>
+                        <p className="cta-disc">Latest trade news</p>
+                        <h3 className="title">Subscribe For Newsletter</h3>
                       </div>
                     </div>
                     {/* <!-- cta left end --> */}
                     <div className="col-lg-6">
                       {/* <!-- cta right --> */}
-                      <form className="cta-input-arae">
+                      <form className="cta-input-arae" onSubmit={onSubmit}>
                         <input
                           type="email"
                           name="email"
+                          onChange={onChange}
+                          value={email}
                           placeholder="Enter Email Address"
                           required
                         />
@@ -53,51 +73,59 @@ const Footer = () => {
                 <div className="quick-link-inner">
                   <ul className="links">
                     <li>
-                      <a href="#">
-                        <i className="far fa-arrow-right"></i> Forum Support
-                      </a>
+                      <Link to="/support">
+                        <i className="far fa-arrow-right"></i> Support
+                      </Link>
                     </li>
                     <li>
-                      <a href="#">
+                      <Link to="/faqs">
                         <i className="far fa-arrow-right"></i> Help & FAQ
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#">
+                      <Link to="/contact">
                         <i className="far fa-arrow-right"></i> Contact Us
-                      </a>
+                      </Link>
                     </li>
-                    <li>
-                      <a href="#">
+                    {/* <li>
+                      <Link to="/">
                         <i className="far fa-arrow-right"></i> Pricing & Plans
-                      </a>
-                    </li>
+                      </Link>
+                    </li> */}
                     <li>
-                      <a href="#">
+                      <Link to="/cookies">
                         <i className="far fa-arrow-right"></i> Cookie Policy
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                   <ul className="links margin-left-70">
                     <li>
-                      <a href="#">
+                      <Link to="/about-us">
                         <i className="far fa-arrow-right"></i> About Us
-                      </a>
+                      </Link>
                     </li>
+                    {isAuthenticated ? (
+                      <li>
+                        <Link to="/dashboard">
+                          <i className="far fa-arrow-right"></i> My Dashboard
+                        </Link>
+                      </li>
+                    ) : (
+                      <li>
+                        <Link to="/login">
+                          <i className="far fa-arrow-right"></i> Login
+                        </Link>
+                      </li>
+                    )}
                     <li>
-                      <a href="#">
-                        <i className="far fa-arrow-right"></i> My Account
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i className="far fa-arrow-right"></i>Our Company
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
+                      <Link to="/">
                         <i className="far fa-arrow-right"></i>Service
-                      </a>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/">
+                        <i className="far fa-arrow-right"></i>Privacy & Policy
+                      </Link>
                     </li>
                   </ul>
                 </div>
@@ -113,15 +141,15 @@ const Footer = () => {
                 <div className="opening-time-inner">
                   <div className="single-opening">
                     <p className="day">Week Days</p>
-                    <p className="time">09.00 - 24:00</p>
+                    <p className="time">09.00 - 17:00</p>
                   </div>
                   <div className="single-opening">
                     <p className="day">Saturday</p>
-                    <p className="time">08:00 - 03.00</p>
+                    <p className="time">11:00 - 14.00</p>
                   </div>
                   <div className="single-opening mb--30 mb_sm--10">
                     <p className="day">Sunday</p>
-                    <p className="time">Day Off</p>
+                    <p className="time">Closed</p>
                   </div>
                   <a href="#" className="rts-btn btn-primary contact-us">
                     Contact Us
@@ -194,7 +222,10 @@ const Footer = () => {
             <div className="row">
               <div className="col-12">
                 <div className="text-center">
-                  <p>PROBITLIVE - Copyright 2022. All rights reserved.</p>
+                  <p>
+                    Pro<span style={{ color: "#DF0A0A" }}>Bit</span>Live -
+                    Copyright 2022. All rights reserved.
+                  </p>
                 </div>
               </div>
             </div>

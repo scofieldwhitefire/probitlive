@@ -5,6 +5,7 @@ import Sidebar from "components/Sidebar";
 import TopBanner from "components/TopBanner";
 import React from "react";
 import { useParams } from "react-router-dom";
+import HomeHelmet from "components/Helmets/HomeHelmet";
 
 const BlogDetails = () => {
   const params = useParams();
@@ -12,6 +13,8 @@ const BlogDetails = () => {
   console.log(dBlog);
   return (
     <>
+      {/* <HomeHelmet title={`Blog - ${dBlog?dBlog:''}`} /> */}
+      <HomeHelmet title={`Blog Detail`} />
       {/* <!-- start header area --> */}
       {/* <!-- start header area --> */}
       <header className="header--sticky header-one ">

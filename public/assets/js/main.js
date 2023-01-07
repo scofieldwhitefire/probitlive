@@ -255,10 +255,10 @@
                 shortSwipes: false,
                 longSwipes: false,
                 effect: 'fade',
-                speed: 500,
-                autoplay: {
-                    delay: 1500,
-                },
+                // speed: 500,
+                // autoplay: {
+                //     delay: 1500,
+                // },
                 pagination: {
                   el: ".swiper-pagination",
                   type: "fraction",

@@ -16,6 +16,8 @@ import sm01 from "./about/sm-01.png";
 import call from "./about/call.svg";
 import about01 from "./about/main/about-01.png";
 import about02 from "./about/main/about-02.png";
+import about011 from "./about/main/about-011.jpg";
+import about022 from "./about/main/about-022.jpg";
 import icon01 from "./service/icon/01.svg";
 import icon02 from "./service/icon/02.svg";
 import icon03 from "./service/icon/03.svg";
@@ -23,6 +25,8 @@ import icon04 from "./service/icon/04.svg";
 import icon05 from "./service/icon/05.svg";
 import icon06 from "./service/icon/06.svg";
 import goal01 from "./business-goal/01.jpg";
+import goal011 from "./business-goal/011.jpg";
+import goalsm011 from "./business-goal/sm-011.jpg";
 import goalsm01 from "./business-goal/sm-01.jpg";
 import goalicon01 from "./business-goal/icon/01.svg";
 import goalicon02 from "./business-goal/icon/02.svg";
@@ -45,6 +49,7 @@ import tm02 from "./team/tm/02.jpg";
 import tm03 from "./team/tm/03.jpg";
 import tm04 from "./team/tm/04.jpg";
 import feature01 from "./feature/01.png";
+import feature011 from "./feature/011.png";
 import testimonials01 from "./testimonials/01.png";
 import testimonials02 from "./testimonials/02.png";
 import testimonials03 from "./testimonials/03.png";
@@ -122,6 +127,8 @@ export const Images = {
   call,
   about01,
   about02,
+  about011,
+  about022,
   icon01,
   icon02,
   icon03,
@@ -129,7 +136,9 @@ export const Images = {
   icon05,
   icon06,
   goal01,
+  goal011,
   goalsm01,
+  goalsm011,
   goalicon01,
   goalicon02,
   counterupicon01,
@@ -151,6 +160,7 @@ export const Images = {
   tm03,
   tm04,
   feature01,
+  feature011,
   testimonials01,
   testimonials02,
   testimonials03,

@@ -3,11 +3,12 @@ import Footer from "components/Footer";
 import Menu from "components/Menu";
 import Sidebar from "components/Sidebar";
 import TopBanner from "components/TopBanner";
-import React from "react";
+import HomeHelmet from "components/Helmets/HomeHelmet";
 
 const About = () => {
   return (
     <>
+          <HomeHelmet title={"About Us"} />
       {/* <!-- start header area --> */}
       {/* <!-- start header area --> */}
       <header className="header--sticky header-one ">

@@ -1,75 +1,121 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import DashboardHelmet from "components/Helmets/Dashboard";
+
+import { ToastContainer, toast } from "react-toastify";
 
 const Forget = () => {
   const [sent, setSent] = useState(!1);
+  const dispatch = useDispatch();
+  const { isAuthenticated } = useSelector((state) => state.user);
 
+  const Toast = (t, m) => {
+    if (t === "success") {
+      toast.success(m);
+    } else if (t === "info") {
+      toast.info(m);
+    } else if (t === "error") {
+      toast.error(m);
+    } else if (t === "warn") {
+      toast.warn(m);
+    }
+  };
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    Toast("error", "Unable to process your request");
+  };
+
+  if (isAuthenticated) return <Navigate to="/dashboard" />;
   return (
     <>
-      <div class="form-body without-side">
-        <div class="website-logo">
-          <a href="index-2.html">
-            <div class="logo">
-              <img class="logo-size" src="images/logo-light.svg" alt="" />
-            </div>
-          </a>
-        </div>
-        <div class="row">
-          <div class="img-holder">
-            <div class="bg"></div>
-            <div class="info-holder">
-              <img src="images/graphic3.svg" alt="" />
-            </div>
-          </div>
-          <div class="form-holder">
-            <div class="form-content">
-              {/* {!sent ? ( */}
-              <div class="form-items">
-                <h3>Password Reset</h3>
-                <p>
-                  To reset your password, enter the email address you use to
-                  register your account.
-                </p>
-                <form>
-                  <input
-                    class="form-control"
-                    type="text"
-                    name="username"
-                    placeholder="E-mail Address"
-                    required
-                  />
-                  <div class="form-button full-width">
-                    <button id="submit" type="submit" class="ibtn btn-forget">
-                      Send Reset Link
-                    </button>
+      <DashboardHelmet />
+      <ToastContainer />
+      <div className="account-pages my-5 pt-sm-5">
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-md-8 col-lg-6 col-xl-5">
+              <div className="card overflow-hidden">
+                <div className="bg-primary bg-soft">
+                  <div className="row">
+                    <div className="col-7">
+                      <div className="text-primary p-4">
+                        <h5 className="text-primary"> Reset Password</h5>
+                        <p>Reset Password with Probitlive.</p>
+                      </div>
+                    </div>
+                    <div className="col-5 align-self-end">
+                      <img
+                        src="assets/images/profile-img.png"
+                        alt=""
+                        className="img-fluid"
+                      />
+                    </div>
                   </div>
-                </form>
-                <div class="page-links" style={{ paddingTop: "15px" }}>
-                  <Link to="/login">Back to login</Link>
+                </div>
+                <div className="card-body pt-0">
+                  <div>
+                    <Link to="/">
+                      <div className="avatar-md profile-user-wid mb-4">
+                        <span className="avatar-title rounded-circle bg-light">
+                          <img
+                            src="assets/images/logo.svg"
+                            alt=""
+                            className="rounded-circle"
+                            height="34"
+                          />
+                        </span>
+                      </div>
+                    </Link>
+                  </div>
+
+                  <div className="p-2">
+                    <div
+                      className="alert alert-success text-center mb-4"
+                      role="alert"
+                    >
+                      Enter your Email and instructions will be sent to you!
+                    </div>
+                    <form className="form-horizontal" onSubmit={onSubmit}>
+                      <div className="mb-3">
+                        <label htmlFor="email" className="form-label">
+                          Email
+                        </label>
+                        <input
+                          type="email"
+                          className="form-control"
+                          id="email"
+                          placeholder="Enter email"
+                        />
+                      </div>
+
+                      <div className="text-end">
+                        <button
+                          className="btn btn-primary w-md waves-effect waves-light"
+                          type="submit"
+                        >
+                          Reset
+                        </button>
+                      </div>
+                    </form>
+                  </div>
                 </div>
               </div>
-              {/* ) : ( */}
-              <div class="form-sent">
-                <div class="tick-holder">
-                  <div class="tick-icon"></div>
-                </div>
-                <h3>Password link sent</h3>
+              <div className="mt-5 text-center">
                 <p>
-                  Please check your inbox{" "}
-                  <a
-                    href="http://brandio.io/cdn-cgi/l/email-protection"
-                    class="__cf_email__"
-                    data-cfemail="b9d0d6dfcbd4f9d0d6dfcbd4cddcd4c9d5d8cddc97d0d6"
-                  >
-                    [email&#160;protected]
-                  </a>
+                  Remember It ?{" "}
+                  <Link to="/login" className="fw-medium text-primary">
+                    {" "}
+                    Sign In here
+                  </Link>{" "}
                 </p>
-                <div class="info-holder">
-                  <span>Couldn't find the message in your inbox? Check your spam folder.</span>
-                  {/* <a href="#">We can help</a>. */}
-                </div>
+                <p>
+                  © <script>document.write(new Date().getFullYear())</script>{" "}
+                  Skote. Crafted with{" "}
+                  <i className="mdi mdi-heart text-danger"></i> by Themesbrand
+                </p>
               </div>
-              {/* )} */}
             </div>
           </div>
         </div>

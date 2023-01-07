@@ -1,8 +1,9 @@
-import { Logos } from 'assets/images';
-import React from 'react'
-import { Link } from 'react-router-dom';
+import { Logos } from "assets/images";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Sidebar = () => {
+  const { isAuthenticated } = useSelector((state) => state.user);
   return (
     <>
       <div id="side-bar" className="side-bar">
@@ -87,7 +88,7 @@ const Sidebar = () => {
                 <li>
                   <Link to="/faqs">FAQs</Link>
                 </li>
-                <li >
+                <li>
                   <Link to="/blogs">Blog</Link>
                 </li>
                 <li>
@@ -110,24 +111,35 @@ const Sidebar = () => {
               </a>
               {/* <!-- <a href="#"><i className="fab fa-linkedin"></i></a> --> */}
             </div>
-            <Link
-              to="/login"
-              className="rts-btn btn-primary ml--20 ml_sm--5 header-one-btn quote-btnmenu"
-            >
-              Login
-            </Link>
-            <a
-              href="#"
-              className="rts-btn btn-primary ml--20 ml_sm--5 header-one-btn quote-btnmenu"
-            >
-              Register
-            </a>
+            {isAuthenticated ? (
+              <Link
+                to="/dashboard"
+                className="rts-btn btn-primary ml--20 ml_sm--5 header-one-btn quote-btnmenu"
+              >
+                Dashboard
+              </Link>
+            ) : (
+              <>
+                <Link
+                  to="/login"
+                  className="rts-btn btn-primary ml--20 ml_sm--5 header-one-btn quote-btnmenu"
+                >
+                  Login
+                </Link>
+                <Link
+                  to="/register"
+                  className="rts-btn btn-primary ml--20 ml_sm--5 header-one-btn quote-btnmenu"
+                >
+                  Register
+                </Link>
+              </>
+            )}
           </div>
         </div>
         {/* <!-- inner menu area desktop End --> */}
       </div>
     </>
   );
-}
+};
 
-export default Sidebar
+export default Sidebar;

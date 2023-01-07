@@ -1,8 +1,10 @@
 import { Images, Logos } from 'assets/images';
-import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Menu = () => {
+  const { isAuthenticated } = useSelector((state) => state.user);
+
   return (
     <>
       <div className="header-main-one bg-white">
@@ -11,7 +13,10 @@ const Menu = () => {
             <div className="col-xl-3 col-lg-4 col-md-4 col-sm-4 col-4">
               <div className="thumbnail">
                 <Link to="/">
-                  <img src={Logos.logo1} alt="pro-logo" />
+                  {/* <img src={Logos.logo1} alt="pro-logo" /> */}
+                  <h4 style={{fontSize: '32px'}}>
+                    Pro<span style={{ color: "#DF0A0A" }}>Bit</span>Live
+                  </h4>
                 </Link>
               </div>
             </div>
@@ -47,10 +52,10 @@ const Menu = () => {
                   </ul>
                 </nav>
                 <div className="button-area">
-                  <button id="search" className="rts-btn btn-primary-alta">
+                  {/* <button id="search" className="rts-btn btn-primary-alta">
                     <i className="far fa-search"></i>
-                  </button>
-                  <div className="search-input-area">
+                  </button> */}
+                  {/* <div className="search-input-area">
                     <div className="container">
                       <div className="search-input-inner">
                         <div className="input-div">
@@ -69,13 +74,23 @@ const Menu = () => {
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <Link
-                    to="/login"
-                    className="rts-btn btn-primary ml--20 ml_sm--5 header-one-btn quote-btn"
-                  >
-                    Login
-                  </Link>
+                  </div> */}
+                  {isAuthenticated ? (
+                    <Link
+                      to="/dashboard"
+                      className="rts-btn btn-primary ml--20 ml_sm--5 header-one-btn quote-btn"
+                    >
+                      Dashboard
+                    </Link>
+                  ) : (
+                    <Link
+                      to="/login"
+                      className="rts-btn btn-primary ml--20 ml_sm--5 header-one-btn quote-btn"
+                    >
+                      Login
+                    </Link>
+                  )}
+
                   <button
                     id="menu-btn"
                     className="menu rts-btn btn-primary-alta ml--20 ml_sm--5"
