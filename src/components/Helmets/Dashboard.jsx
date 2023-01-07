@@ -5,12 +5,6 @@ const DashboardHelmet = () => {
     <Helmet>
       <style type="text/css">
         {`
-            /*!
- * Bootstrap v5.1.3 (https://getbootstrap.com/)
- * Copyright 2011-2021 The Bootstrap Authors
- * Copyright 2011-2021 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- */
 :root {
   --bs-blue: #556ee6;
   --bs-indigo: #564ab1;
@@ -12541,9 +12535,6 @@ button {
 .dropdown-icon-item:hover {
   border-color: #eff2f7;
 }
-.fullscreen-enable [data-bs-toggle="fullscreen"] .bx-fullscreen::before {
-  content: "\ea3f";
-}
 body[data-topbar="dark"] #page-topbar {
   background-color: #2a3042;
 }
@@ -12763,7 +12754,6 @@ body[data-layout="horizontal"] .footer {
   transform: rotate(-180deg);
 }
 #sidebar-menu .has-arrow:after {
-  content: "\F0140";
   font-family: "Material Design Icons";
   display: block;
   float: right;
@@ -13795,9 +13785,6 @@ body[data-layout="horizontal"][data-layout-size="boxed"] .navbar-header {
   -ms-flex-pack: justify;
   justify-content: space-between;
 }
-.custom-accordion .accordion-list.collapsed i.accor-plus-icon:before {
-  content: "\F0415";
-}
 .custom-accordion .accordion-list .accor-plus-icon {
   display: inline-block;
   font-size: 16px;
@@ -13807,9 +13794,6 @@ body[data-layout="horizontal"][data-layout-size="boxed"] .navbar-header {
   background-color: #fff;
   text-align: center;
   border-radius: 50%;
-}
-.custom-accordion a.collapsed i.accor-down-icon:before {
-  content: "\F0140";
 }
 .custom-accordion .card-body {
   color: #74788d;
@@ -14097,7 +14081,6 @@ body[data-layout="horizontal"][data-layout-size="boxed"] .navbar-header {
 }
 .form-checkbox-outline .form-check-input:checked:after {
   position: absolute;
-  content: "\F012C";
   font-family: "Material Design Icons";
   top: -4px !important;
   left: 1px;
@@ -15147,7 +15130,6 @@ input[type="checkbox"].tui-full-calendar-checkbox-round + span {
 .select2-result-repository__forks .fa.fa-flash::before,
 .select2-result-repository__stargazers .fa.fa-flash::before,
 .select2-result-repository__watchers .fa.fa-flash::before {
-  content: "\f0e7";
   font-family: "Font Awesome 5 Free";
 }
 .select2-results__option--highlighted .select2-result-repository__forks,
@@ -15900,7 +15882,6 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before {
   outline: 0;
 }
 .table-rep-plugin .checkbox-row input[type="checkbox"]:checked + label::after {
-  content: "\f00c";
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
 }
@@ -16089,9 +16070,6 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before {
 }
 .auth-body-bg {
   background-color: #fff;
-}
-.auth-pass-inputgroup input[type="input"] + .btn .mdi-eye-outline:before {
-  content: "\F06D1";
 }
 .auth-full-bg {
   background-color: rgba(85, 110, 230, 0.25);
@@ -16375,7 +16353,6 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before {
   top: 0;
 }
 .message-list .checkbox-wrapper-mail label:before {
-  content: "\F012C";
   font-family: "Material Design Icons";
   top: 0;
   height: 20px;
@@ -16581,7 +16558,6 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before {
   left: auto;
 }
 .chat-conversation .last-chat .conversation-list:before {
-  content: "\F0009";
   font-family: "Material Design Icons";
   position: absolute;
   color: #556ee6;
@@ -16639,7 +16615,6 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before {
     position: relative;
   }
   .currency-value:after {
-    content: "\F04E1";
     font-family: "Material Design Icons";
     font-size: 24px;
     position: absolute;
@@ -16950,9 +16925,6 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before {
 .hori-timeline .events .event-list.active .down-arrow-icon {
   -webkit-animation: fade-down 1.5s infinite linear;
   animation: fade-down 1.5s infinite linear;
-}
-.hori-timeline .events .event-list.active .down-arrow-icon:before {
-  content: "\ec4c";
 }
 .verti-timeline {
   border-left: 3px dashed #f6f6f6;
