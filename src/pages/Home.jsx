@@ -180,14 +180,21 @@ const Home = () => {
                   risus suscipit <br /> Dui feugiat fusce conubia ridiculus
                   tristique parturient
                 </p>
-                {isAuthenticated?(
-                <Link to="/dashboard" className="rts-btn btn-primary color-h-black">
-                  Dashboard
-                </Link>
-                ):
-                (<Link to="/login" className="rts-btn btn-primary color-h-black">
-                  Get Started
-                </Link>)}
+                {isAuthenticated ? (
+                  <Link
+                    to="/dashboard"
+                    className="rts-btn btn-primary color-h-black"
+                  >
+                    Dashboard
+                  </Link>
+                ) : (
+                  <Link
+                    to="/login"
+                    className="rts-btn btn-primary color-h-black"
+                  >
+                    Get Started
+                  </Link>
+                )}
                 <img
                   className="shape-img one"
                   src={Images.shape01}
@@ -217,14 +224,21 @@ const Home = () => {
                   risus suscipit <br /> Dui feugiat fusce conubia ridiculus
                   tristique parturient
                 </p>
-                {isAuthenticated?(
-                <Link to="/dashboard" className="rts-btn btn-primary color-h-black">
-                  Dashboard
-                </Link>
-                ):
-                (<Link to="/login" className="rts-btn btn-primary color-h-black">
-                  Get Started
-                </Link>)}
+                {isAuthenticated ? (
+                  <Link
+                    to="/dashboard"
+                    className="rts-btn btn-primary color-h-black"
+                  >
+                    Dashboard
+                  </Link>
+                ) : (
+                  <Link
+                    to="/login"
+                    className="rts-btn btn-primary color-h-black"
+                  >
+                    Get Started
+                  </Link>
+                )}
                 <img
                   className="shape-img one"
                   src={Images.shape01}
@@ -250,14 +264,21 @@ const Home = () => {
                   risus suscipit <br /> Dui feugiat fusce conubia ridiculus
                   tristique parturient
                 </p>
-                {isAuthenticated?(
-                <Link to="/dashboard" className="rts-btn btn-primary color-h-black">
-                  Dashboard
-                </Link>
-                ):
-                (<Link to="/login" className="rts-btn btn-primary color-h-black">
-                  Get Started
-                </Link>)}
+                {isAuthenticated ? (
+                  <Link
+                    to="/dashboard"
+                    className="rts-btn btn-primary color-h-black"
+                  >
+                    Dashboard
+                  </Link>
+                ) : (
+                  <Link
+                    to="/login"
+                    className="rts-btn btn-primary color-h-black"
+                  >
+                    Get Started
+                  </Link>
+                )}
                 <img
                   className="shape-img one"
                   src={Images.shape01}
@@ -425,11 +446,13 @@ const Home = () => {
             <div className="col-lg-6 col-md-12 col-sm-12 col-12 order-lg-2 order-md-1 order-sm-1 order-1">
               <div className="about-one-thumbnail">
                 <img src={Images.about011} alt="about-finbiz" />
-                {!isMobile&&(<img
-                  className="small-img"
-                  src={Images.about022}
-                  alt="pro-small"
-                />)}
+                {!isMobile && (
+                  <img
+                    className="small-img"
+                    src={Images.about022}
+                    alt="pro-small"
+                  />
+                )}
                 <div className="experience">
                   <div className="left single">
                     <h2 className="title">10+</h2>
@@ -637,12 +660,14 @@ const Home = () => {
             {/* <!-- business goal left --> */}
             <div className="col-lg-6">
               <div className="business-goal-one">
-                {!isMobile&&(<img src={Images.goal011} alt="Business_Goal" />)}
-                <img
-                  className="small"
-                  src={Images.goalsm011}
-                  alt="Business_Goal"
-                />
+                <img src={Images.goal011} alt="Business_Goal" />
+                {!isMobile && (
+                  <img
+                    className="small"
+                    src={Images.goalsm011}
+                    alt="Business_Goal"
+                  />
+                )}
               </div>
             </div>
             {/* <!-- business goal right --> */}
@@ -795,7 +820,10 @@ const Home = () => {
                       >
                         <div id="firstTradew" className="thumbnail-gallery">
                           <div className="tradingview-widget-container">
-                            <div style={{ display: "none" }} id="tradingview_848b8"></div>
+                            <div
+                              style={{ display: "none" }}
+                              id="tradingview_848b8"
+                            ></div>
                           </div>
                         </div>
                       </div>
@@ -828,13 +856,13 @@ const Home = () => {
                   </div>
                   <div className="swiper-slide">
                     <div className="row g-5 w-g-100">
-                      <div
-                        id="secondTrade"
-                        className="col-lg-7"
-                      >
+                      <div id="secondTrade" className="col-lg-7">
                         <div id="secondTradew" className="thumbnail-gallery">
                           <div className="tradingview-widget-container">
-                            <div style={{ display: "none" }} id="tradingview_848c5"></div>
+                            <div
+                              style={{ display: "none" }}
+                              id="tradingview_848c5"
+                            ></div>
                           </div>
                         </div>
                       </div>
@@ -869,13 +897,13 @@ const Home = () => {
                   </div>
                   <div className="swiper-slide">
                     <div className="row g-5 w-g-100">
-                      <div
-                        id="thirdTrade"
-                        className="col-lg-7"
-                      >
+                      <div id="thirdTrade" className="col-lg-7">
                         <div id="thirdTradew" className="thumbnail-gallery">
                           <div className="tradingview-widget-container">
-                            <div style={{ display: "none" }} id="tradingview_8wec5"></div>
+                            <div
+                              style={{ display: "none" }}
+                              id="tradingview_8wec5"
+                            ></div>
                           </div>
                         </div>
                       </div>
