@@ -3,10 +3,12 @@ import Footer from "components/Footer";
 import Menu from "components/Menu";
 import Sidebar from "components/Sidebar";
 import TopBanner from "components/TopBanner";
+import HomeHelmet from "components/Helmets/HomeHelmet";
 
 const Services = () => {
   return (
     <>
+      <HomeHelmet title={"Services"} />
       {/* <!-- start header area --> */}
       {/* <!-- start header area --> */}
       <header className="header--sticky header-one ">
@@ -14,12 +16,9 @@ const Services = () => {
         <Menu />
       </header>
       {/* <!-- End header area --> */}
-
       <Sidebar />
-
       <div id="anywhere-home"></div>
       {/* <!-- ENd Header Area --> */}
-
       {/* <!-- start breadcrumb area --> */}
       <div className="rts-breadcrumb-area breadcrumb-bg bg_image">
         <div className="container">
@@ -40,7 +39,6 @@ const Services = () => {
         </div>
       </div>
       {/* <!-- end breadcrumb area --> */}
-
       {/* <!-- our service area start --> */}
       <div className="rts-service-area rts-section-gapTop pb--200 service-two-bg bg_image">
         <div className="container">
@@ -49,10 +47,7 @@ const Services = () => {
             <div className="col-xl-4 col-md-6 col-sm-12 col-12 pb--140 pb_md--100">
               <div className="service-two-inner">
                 <a href="service-details.html" className="thumbnail">
-                  <img
-                    src={Images.service02}
-                    alt="Business_image"
-                  />
+                  <img src={Images.service02} alt="Business_image" />
                 </a>
                 <div className="body-content">
                   <div className="hidden-area">
@@ -77,10 +72,7 @@ const Services = () => {
             <div className="col-xl-4 col-md-6 col-sm-12 col-12 pb--140 pb_md--100">
               <div className="service-two-inner">
                 <a href="service-details.html" className="thumbnail two">
-                  <img
-                    src={Images.service03}
-                    alt="Business_image"
-                  />
+                  <img src={Images.service03} alt="Business_image" />
                 </a>
                 <div className="body-content">
                   <div className="hidden-area">
@@ -105,10 +97,7 @@ const Services = () => {
             <div className="col-xl-4 col-md-6 col-sm-12 col-12 pb--140 pb_md--100">
               <div className="service-two-inner">
                 <a href="service-details.html" className="thumbnail three">
-                  <img
-                    src={Images.service04}
-                    alt="Business_image"
-                  />
+                  <img src={Images.service04} alt="Business_image" />
                 </a>
                 <div className="body-content">
                   <div className="hidden-area">
@@ -133,10 +122,7 @@ const Services = () => {
             <div className="col-xl-4 col-md-6 col-sm-12 col-12 pb--140 pb_md--100">
               <div className="service-two-inner">
                 <a href="service-details.html" className="thumbnail">
-                  <img
-                    src={Images.service02}
-                    alt="Business_image"
-                  />
+                  <img src={Images.service02} alt="Business_image" />
                 </a>
                 <div className="body-content">
                   <div className="hidden-area">
@@ -161,10 +147,7 @@ const Services = () => {
             <div className="col-xl-4 col-md-6 col-sm-12 col-12 pb--140 pb_md--60">
               <div className="service-two-inner">
                 <a href="service-details.html" className="thumbnail two">
-                  <img
-                    src={Images.service03}
-                    alt="Business_image"
-                  />
+                  <img src={Images.service03} alt="Business_image" />
                 </a>
                 <div className="body-content">
                   <div className="hidden-area">
@@ -189,10 +172,7 @@ const Services = () => {
             <div className="col-xl-4 col-md-6 col-sm-12 col-12 pb--140 pb_md--60 pb_sm--60">
               <div className="service-two-inner">
                 <a href="service-details.html" className="thumbnail three">
-                  <img
-                    src={Images.service04}
-                    alt="Business_image"
-                  />
+                  <img src={Images.service04} alt="Business_image" />
                 </a>
                 <div className="body-content">
                   <div className="hidden-area">
@@ -217,7 +197,6 @@ const Services = () => {
         </div>
       </div>
       {/* <!-- our service area end --> */}
-
       {/* <!-- service accordion area --> */}
       <div className="rts-accordion-area service rts-section-gap">
         <div className="accordion-service-bg bg_image ptb--120 ptb_md--80 ptb_sm--60">
@@ -374,11 +353,9 @@ const Services = () => {
         </div>
       </div>
       {/* <!-- service accordion area End --> */}
-
       {/* <!-- start header area --> */}
       <Footer />
       {/* <!-- ENd Header Area --> */}
-
       {/* <!-- start loader --> */}
       <div className="loader-wrapper">
         <div className="loader"></div>
@@ -386,7 +363,6 @@ const Services = () => {
         <div className="loader-section section-right"></div>
       </div>
       {/* <!-- End loader --> */}
-
       {/* <!-- progress Back to top --> */}
       <div className="progress-wrap">
         <svg

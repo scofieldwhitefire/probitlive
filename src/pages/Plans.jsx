@@ -3,10 +3,12 @@ import Menu from "components/Menu";
 import Sidebar from "components/Sidebar";
 import TopBanner from "components/TopBanner";
 import React from "react";
+import HomeHelmet from "components/Helmets/HomeHelmet";
 
 const Plans = () => {
   return (
     <>
+      <HomeHelmet title={"Our Plans"} />
       {/* <!-- start header area --> */}
       {/* <!-- start header area --> */}
       <header className="header--sticky header-one ">
@@ -14,9 +16,7 @@ const Plans = () => {
         <Menu />
       </header>
       {/* <!-- End header area --> */}
-
       <Sidebar />
-
       <div id="anywhere-home"></div>
       {/* <!-- ENd Header Area --> */}
       {/* <!-- start breadcrumb area --> */}
@@ -39,7 +39,6 @@ const Plans = () => {
         </div>
       </div>
       {/* <!-- end breadcrumb area --> */}
-
       {/* <!-- start pricing area --> */}
       <div className="rts-pricing-area rts-section-gap">
         <div className="container">
@@ -269,11 +268,9 @@ const Plans = () => {
         </div>
       </div>
       {/* <!-- end pricing area --> */}
-
       {/* <!-- start header area --> */}
       <Footer />
       {/* <!-- ENd Header Area --> */}
-
       {/* <!-- start loader --> */}
       <div className="loader-wrapper">
         <div className="loader"></div>
@@ -281,7 +278,6 @@ const Plans = () => {
         <div className="loader-section section-right"></div>
       </div>
       {/* <!-- End loader --> */}
-
       {/* <!-- progress Back to top --> */}
       <div className="progress-wrap">
         <svg

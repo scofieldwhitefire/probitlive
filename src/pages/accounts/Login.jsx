@@ -1,4 +1,4 @@
-import "assets/css/login/login.css";
+import "assets/css/dashboard/css/index.css";
 import { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { login } from "features/users";
@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import DashboardHelmet from "components/Helmets/Dashboard";
 
 const initial = {
   username: "",
@@ -20,6 +21,7 @@ const Login = () => {
   const { username, password } = formData;
 
   const Toast = (t, m) => {
+    toast.clearWaitingQueue()
     if (t === "success") {
       toast.success(m);
     } else if (t === "info") {
@@ -31,81 +33,184 @@ const Login = () => {
     }
   };
 
+  const viewPassword = (e) => {
+    
+  };
+  
   const onChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const onSubmit = async (e) => {
     e.preventDefault();
+    let ce = !0
 
+    if (username === null || username === "") {
+      Toast("error", "Username is required");
+      ce = !1;
+    }
+    if (password === null || password === "") {
+      Toast("error", "Password is required");
+      ce = !1;
+    }
+
+    if (ce) {
     const res = await dispatch(login({ username, password }));
-    if (res?.error?.message.toLowerCase() === "rejected") {
+    if (res.meta.requestStatus.toLowerCase() === "rejected") {
       if (res?.payload?.status === 401) {
         Toast("error", res?.payload?.detail);
       } else {
         Toast("error", "Unable to process your request");
       }
     }
+    }
   };
 
   if (isAuthenticated) return <Navigate to="/dashboard" />;
   return (
     <>
+      <DashboardHelmet />
       <ToastContainer />
-      <div className="form-body without-side">
-        <div className="website-logo">
-          <a href="index-2.html">
-            <div className="logo">
-              <img className="logo-size" src="images/logo-light.svg" alt="" />
-            </div>
-          </a>
-        </div>
-        <div className="row">
-          <div className="img-holder">
-            <div className="bg"></div>
-            <div className="info-holder">
-              <img src="images/graphic3.svg" alt="" />
-            </div>
-          </div>
-          <div className="form-holder">
-            <div className="form-content">
-              <div className="form-items">
-                <h3>Login to account</h3>
-                <p>Enter details to access account.</p>
-                <form onSubmit={onSubmit}>
-                  <input
-                    className="form-control"
-                    type="text"
-                    name="username"
-                    placeholder="Username"
-                    onChange={onChange}
-                    value={username}
-                    required
-                  />
-                  <input
-                    className="form-control"
-                    type="password"
-                    name="password"
-                    placeholder="Password"
-                    onChange={onChange}
-                    value={password}
-                    required
-                  />
-                  <div className="form-button">
-                    <button id="submit" type="submit" className="ibtn">
-                      Login
-                    </button>{" "}
-                    <Link to="/forget-password">Forget password?</Link>
+      <div className="account-pages my-5 pt-sm-5">
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-md-8 col-lg-6 col-xl-5">
+              <div className="card overflow-hidden">
+                <div className="bg-primary bg-soft">
+                  <div className="row">
+                    <div className="col-7">
+                      <div className="text-primary p-4">
+                        <h5 className="text-primary">Welcome Back!</h5>
+                        <p>Login to continue to Probitlive.</p>
+                      </div>
+                    </div>
+                    <div className="col-5 align-self-end">
+                      <img
+                        src="assets/images/profile-img.png"
+                        alt=""
+                        className="img-fluid"
+                      />
+                    </div>
                   </div>
-                </form>
-                <div className="page-links" style={{ paddingTop: "15px" }}>
-                  <Link to="/register">Register new account</Link>
+                </div>
+                <div className="card-body pt-0">
+                  <div className="auth-logo">
+                    <Link to="/" className="auth-logo-light">
+                      <div className="avatar-md profile-user-wid mb-4">
+                        <span className="avatar-title rounded-circle bg-light">
+                          <img
+                            src="assets/images/logo-light.svg"
+                            alt=""
+                            className="rounded-circle"
+                            height="34"
+                          />
+                        </span>
+                      </div>
+                    </Link>
+
+                    <Link to="/" className="auth-logo-dark">
+                      <div className="avatar-md profile-user-wid mb-4">
+                        <span className="avatar-title rounded-circle bg-light">
+                          <img
+                            src="assets/images/logo.svg"
+                            alt=""
+                            className="rounded-circle"
+                            height="34"
+                          />
+                        </span>
+                      </div>
+                    </Link>
+                  </div>
+                  <div className="p-2">
+                    <form className="form-horizontal" onSubmit={onSubmit}>
+                      <div className="mb-3">
+                        <label htmlFor="username" className="form-label">
+                          Username
+                        </label>
+                        <input
+                          type="text"
+                          name="username"
+                          className="form-control"
+                          id="username"
+                          onChange={onChange}
+                          value={username}
+                          placeholder="Enter username"
+                        />
+                      </div>
+
+                      <div className="mb-3">
+                        <label className="form-label">Password</label>
+                        <div className="input-group auth-pass-inputgroup">
+                          <input
+                            type="password"
+                            name="password"
+                            className="form-control"
+                            placeholder="Enter password"
+                            aria-label="Password"
+                            aria-describedby="password-addon"
+                            onChange={onChange}
+                            value={password}
+                          />
+                          <button
+                            className="btn btn-light "
+                            type="button"
+                            id="password-addon"
+                            onClick={viewPassword}
+                          >
+                            <i className="mdi mdi-eye-outline"></i>
+                          </button>
+                        </div>
+                      </div>
+
+                      {/* <div className="form-check">
+                        <input
+                          className="form-check-input"
+                          type="checkbox"
+                          id="remember-check"
+                        />
+                        <label
+                          className="form-check-label"
+                          htmlFor="remember-check"
+                        >
+                          Remember me
+                        </label>
+                      </div> */}
+
+                      <div className="mt-3 d-grid">
+                        <button
+                          className="btn btn-primary waves-effect waves-light"
+                          type="submit"
+                        >
+                          Log In
+                        </button>
+                      </div>
+
+                      <div className="mt-4 text-center">
+                        <Link to="/forget-password" className="text-muted">
+                          <i className="mdi mdi-lock me-1"></i> Forgot your
+                          password?
+                        </Link>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-5 text-center">
+                <div>
+                  <p>
+                    Don't have an account?{" "}
+                    <Link to="/register" className="fw-medium text-primary">
+                      Register
+                    </Link>
+                  </p>
+                  <p>© {new Date().getFullYear()} Probitlive. </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+      {/* <!-- end account-pages --> */}
     </>
   );
 };

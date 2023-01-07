@@ -1,16 +1,158 @@
-import { useEffect, useState } from "react";
-import "App.css";
+import { useEffect, useState, useRef } from "react";
+import "Home.css";
 import { Images, Logos } from "assets/images";
-import HomeHelment from "components/HomeHelment";
 import TopBanner from "components/TopBanner";
 import Menu from "components/Menu";
 import Sidebar from "components/Sidebar";
 import Footer from "components/Footer";
+import HomeHelmet from "components/Helmets/HomeHelmet";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import ContactForm from "components/ContactForm";
 
 const Home = () => {
+  const { isAuthenticated } = useSelector((state) => state.user);
+  const onLoadScriptRef = useRef();
+  const onLoadScriptSRef = useRef();
+  const onLoadScriptTRef = useRef();
+  const onLoadScriptRef2 = useRef();
+  const ch = useState(!1);
+  let [n, setN] = useState(1);
+
+  let tvScriptLoadingPromise;
+  let tvScriptLoadingPromises;
+
+  const showCharts = (x='init') => {
+    if (x === "next") {
+      n += 1;
+    } else if (x === "prev") {
+      n -= 1;
+    } 
+    n > 3 && setN(1);
+    n < 1 && setN(3);
+
+    n === 1 &&
+      (document.getElementById("tradingview_848b8").style.display = "block");
+    n === 2 &&
+      (document.getElementById("tradingview_848c5").style.display = "block");
+    n === 3 &&
+      (document.getElementById("tradingview_8wec5").style.display = "block");
+  };
+
+  useEffect(() => {
+    onLoadScriptRef.current = firstTrade;
+    onLoadScriptSRef.current = secondTrade;
+    onLoadScriptTRef.current = thirdTrade;
+    onLoadScriptRef2.current = secondTrade;
+
+    showCharts();
+    if (!tvScriptLoadingPromise) {
+      tvScriptLoadingPromise = new Promise((resolve) => {
+        const script = document.createElement("script");
+        script.id = "tradingview-widget-loading-script";
+        script.src = "https://s3.tradingview.com/tv.js";
+        script.type = "text/javascript";
+        script.onload = resolve;
+
+        document.head.appendChild(script);
+      });
+    }
+    
+    if (!tvScriptLoadingPromises) {
+      tvScriptLoadingPromises = new Promise((resolve) => {
+        const script2 = document.createElement("script");
+        script2.id = "tradingview-widget-loading-script";
+        script2.src = "https://s3.tradingview.com/external-embedding/embed-widget-tickers.js";
+        script2.type = "text/javascript";
+        script2.onload = resolve;
+
+        document.head.appendChild(script2);
+      });
+    }
+
+    tvScriptLoadingPromise.then(
+      () => {
+        onLoadScriptRef.current && onLoadScriptRef.current()
+        onLoadScriptSRef.current && onLoadScriptSRef.current()
+        onLoadScriptTRef.current && onLoadScriptTRef.current()
+        }
+    );
+    tvScriptLoadingPromises.then(
+      () => onLoadScriptRef2.current && onLoadScriptRef2.current()
+    );
+
+    return () => ([onLoadScriptRef.current, onLoadScriptSRef.current, onLoadScriptTRef.current, onLoadScriptRef2.current] = null);
+
+    function firstTrade() {
+      const first_trade = document.getElementById("tradingview_848b8");
+      if (first_trade && "TradingView" in window) {
+        const width = document.getElementById("firstTradew").clientWidth;
+        const height = document.getElementById("firstTrade").clientHeight;
+        new window.TradingView.widget({
+          symbol: "COINBASE:BTCUSD",
+          interval: "1",
+          timezone: "Etc/UTC",
+          theme: "light",
+          style: "1",
+          width,
+          height,
+          locale: "en",
+          toolbar_bg: "#f1f3f6",
+          enable_publishing: false,
+          save_image: false,
+          container_id: "tradingview_848b8",
+        });
+      }
+    }
+
+    function secondTrade() {
+      const second_trade = document.getElementById("tradingview_848c5");
+      if (second_trade && "TradingView" in window) {
+        const width = document.getElementById("secondTradew").clientWidth;
+        const height = document.getElementById("secondTrade").clientHeight;
+        new window.TradingView.widget({
+          symbol: "COINBASE:ETHUSD",
+          interval: "1",
+          timezone: "Etc/UTC",
+          theme: "light",
+          style: "1",
+          width,
+          height,
+          locale: "en",
+          toolbar_bg: "#f1f3f6",
+          enable_publishing: false,
+          save_image: false,
+          container_id: "tradingview_848c5",
+        });
+      }
+    }
+
+    function thirdTrade() {
+      const third_trade = document.getElementById("tradingview_8wec5");
+      if (third_trade && "TradingView" in window) {
+        const width = document.getElementById("thirdTradew").clientWidth;
+        const height = document.getElementById("thirdTrade").clientHeight;
+        new window.TradingView.widget({
+          symbol: "COINBASE:LTCUSD",
+          interval: "1",
+          timezone: "Etc/UTC",
+          theme: "light",
+          style: "1",
+          width,
+          height,
+          locale: "en",
+          toolbar_bg: "#f1f3f6",
+          enable_publishing: false,
+          save_image: false,
+          container_id: "tradingview_8wec5",
+        });
+      }
+    }
+  }, [ch]);
 
   return (
     <>
+      <HomeHelmet title={"Home"} />
       {/* <!-- start header area --> */}
       {/* <!-- start header area --> */}
       <header className="header--sticky header-one ">
@@ -32,13 +174,19 @@ const Home = () => {
               {/* <!-- banner single content --> */}
               <div className="banner-one-inner text-start">
                 <p className="pre-title">
-                  <span>Welcome!</span> Start Growing Your Business Today
+                  <span>Welcome!</span>{" "}
+                  <i style={{ color: "white", fontStyle: "normal" }}>
+                    Start Growing Your trade Today
+                  </i>
                 </p>
                 <h1 className="title ">
-                  Make <span>Business Unique </span> <br />
-                  With Great Ideas
+                  <i style={{ color: "white", fontStyle: "normal" }}>Make</i>{" "}
+                  <span>Business Unique </span> <br />
+                  <i style={{ color: "white", fontStyle: "normal" }}>
+                    With Great Ideas
+                  </i>
                 </h1>
-                <p className="disc banner-para">
+                <p className="disc banner-para" style={{ color: "white" }}>
                   Porttitor ornare fermentum aliquam pharetra facilisis gravida
                   risus suscipit <br /> Dui feugiat fusce conubia ridiculus
                   tristique parturient
@@ -58,12 +206,19 @@ const Home = () => {
               {/* <!-- banner single content --> */}
               <div className="banner-one-inner text-start">
                 <p className="pre-title">
-                  <span>Welcome!</span> Start Growing Your Business Today
+                  <span>Welcome!</span>{" "}
+                  <i style={{ color: "white", fontStyle: "normal" }}>
+                    Start Growing Your trade Today
+                  </i>
                 </p>
                 <h1 className="title ">
-                  Launch <span>Ultra Modern</span> <br /> Effective Business
+                  <i style={{ color: "white", fontStyle: "normal" }}>Launch</i>{" "}
+                  <span>Ultra Modern </span> <br />
+                  <i style={{ color: "white", fontStyle: "normal" }}>
+                    Effective Business
+                  </i>
                 </h1>
-                <p className="disc banner-para">
+                <p className="disc banner-para" style={{ color: "white" }}>
                   Porttitor ornare fermentum aliquam pharetra facilisis gravida
                   risus suscipit <br /> Dui feugiat fusce conubia ridiculus
                   tristique parturient
@@ -83,7 +238,10 @@ const Home = () => {
               {/* <!-- banner single content --> */}
               <div className="banner-one-inner text-start">
                 <p className="pre-title">
-                  <span>Welcome!</span> Start Growing Your Business Today
+                  <span>Welcome!</span>{" "}
+                  <i style={{ color: "white", fontStyle: "normal" }}>
+                    Start Growing Your trade Today
+                  </i>
                 </p>
                 <h1 className="title ">
                   Make <span>Business Growth</span> <br /> With Next Level
@@ -121,7 +279,7 @@ const Home = () => {
         </div>
       </div>
       {/* <!-- banner blank space area end --> */}
-{/* <div class="tradingview-widget-container">
+      {/* <div class="tradingview-widget-container">
   <div class="tradingview-widget-container__widget"></div>
   <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
       
@@ -164,7 +322,6 @@ const Home = () => {
 }
   </script>
 </div> */}
-
 
       {/* <!-- rts about us section start --> */}
       <div className="rts-about-area rts-section-gap bg-about-sm-shape">
@@ -219,10 +376,41 @@ const Home = () => {
                 </div>
                 {/* <!-- start about success area --> */}
 
+                {
+                  {
+                  symbols: [
+                    {
+                      proName: "FOREXCOM:SPXUSD",
+                      "title": "S&P 500"
+                    },
+                    {
+                      proName: "FOREXCOM:NSXUSD",
+                      "title": "US 100"
+                    },
+                    {
+                      proName: "FX_IDC:EURUSD",
+                      "title": "EUR/USD"
+                    },
+                    {
+                      proName: "BITSTAMP:BTCUSD",
+                      "title": "Bitcoin"
+                    },
+                    {
+                      proName: "BITSTAMP:ETHUSD",
+                      "title": "Ethereum"
+                    }
+                  ],
+                  colorTheme: "light",
+                  isTransparent: !1,
+                  showSymbolLogo: !0,
+                  locale: "en"
+                }
+                }
+
                 {/* <!-- about founder & get in touch start --> */}
                 <div className="row about-founder-wrapper align-items-center mt--40">
                   {/* <!-- left area start --> */}
-                  <div className="col-lg-6 col-md-6 col-sm-6 col-12">
+                  {/* <div className="col-lg-6 col-md-6 col-sm-6 col-12">
                     <div className="author-inner">
                       <a className="thumbnail" href="#">
                         <img src={Images.sm01} alt="pro_founder" />
@@ -234,10 +422,10 @@ const Home = () => {
                         <span>CEO & Founder</span>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                   {/* <!-- left area end --> */}
                   {/* <!-- right founder area --> */}
-                  <div className="col-lg-6 col-md-6 col-sm-6 col-12 mt_sm--20">
+                  {/* <div className="col-lg-6 col-md-6 col-sm-6 col-12 mt_sm--20">
                     <div className="author-call-option">
                       <img
                         className="authore-call"
@@ -251,7 +439,7 @@ const Home = () => {
                         </a>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                   {/* <!-- left founder area --> */}
                 </div>
                 {/* <!-- about founder & get in touch end --> */}
@@ -262,10 +450,10 @@ const Home = () => {
             {/* <!-- about-right Start--> */}
             <div className="col-lg-6 col-md-12 col-sm-12 col-12 order-lg-2 order-md-1 order-sm-1 order-1">
               <div className="about-one-thumbnail">
-                <img src={Images.about01} alt="about-finbiz" />
+                <img src={Images.about011} alt="about-finbiz" />
                 <img
                   className="small-img"
-                  src={Images.about02}
+                  src={Images.about022}
                   alt="pro-small"
                 />
                 <div className="experience">
@@ -453,8 +641,7 @@ const Home = () => {
               <div className="cta-one-inner">
                 <div className="cta-left">
                   <h3 className="title">
-                    Let’s discuss about how we can help make your trading
-                    better
+                    Let’s discuss about how we can help make your trading better
                   </h3>
                 </div>
                 <div className="cta-right">
@@ -476,10 +663,10 @@ const Home = () => {
             {/* <!-- business goal left --> */}
             <div className="col-lg-6">
               <div className="business-goal-one">
-                <img src={Images.goal01} alt="Business_Goal" />
+                <img src={Images.goal011} alt="Business_Goal" />
                 <img
                   className="small"
-                  src={Images.goalsm01}
+                  src={Images.goalsm011}
                   alt="Business_Goal"
                 />
               </div>
@@ -490,7 +677,7 @@ const Home = () => {
             <div className="col-lg-6 mt--35 mt_md--70 mt_sm--70">
               <div className="business-goal-right">
                 <div className="rts-title-area business text-start pl--30">
-                  <p className="pre-title">JUST A CONSULTANCY</p>
+                  <p className="pre-title">Trading with the best</p>
                   <h2 className="title">
                     We know how to manage trading globally
                   </h2>
@@ -527,13 +714,13 @@ const Home = () => {
                     </div>
                   </div>
                   <div className="goal-button-wrapper mt--70">
-                    <a
-                      href="contactus.html"
+                    <Link
+                      to="/contact"
                       className="rts-btn btn-primary color-h-black"
                     >
                       Contact Us
-                    </a>
-                    <div className="vedio-icone">
+                    </Link>
+                    {/* <div className="vedio-icone">
                       <a id="play-video" className="video-play-button" href="#">
                         <span></span>
                         <span className="outer-text">Watch Video</span>
@@ -541,7 +728,7 @@ const Home = () => {
                       <div id="video-overlay" className="video-overlay">
                         <a className="video-overlay-close">×</a>
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
@@ -628,12 +815,14 @@ const Home = () => {
                 <div className="swiper-wrapper gallery">
                   <div className="swiper-slide">
                     <div className="row g-5 w-g-100">
-                      <div className="col-lg-7 col-md-12 col-sm-12 col-12">
-                        <div className="thumbnail-gallery">
-                          <img
-                            src={Images.gallerygallery01}
-                            alt="business-images"
-                          />
+                      <div
+                        id="firstTrade"
+                        className="col-lg-7 col-md-12 col-sm-12 col-12"
+                      >
+                        <div id="firstTradew" className="thumbnail-gallery">
+                          <div className="tradingview-widget-container">
+                            <div style={{ display: "none" }} id="tradingview_848b8"></div>
+                          </div>
                         </div>
                       </div>
                       <div className="col-lg-5 col-md-12 col-sm-12 col-12">
@@ -644,33 +833,35 @@ const Home = () => {
                               alt="Business-gallery"
                             />
                           </div>
-                          <a href="#">
-                            <h4 className="title">Pro Business Solution</h4>
-                          </a>
-                          <span>Case Study, Growth</span>
-                          <p className="disc">
-                            Ornare etiam laoreet dictumst nisl quisque
-                            scelerisque cras ut porta interdum purus mattis
-                            iaculis litora turpis torquent posuere.
-                          </p>
-                          <a
-                            className="rts-btn btn-primary"
-                            href="project-details.html"
-                          >
-                            View Project
-                          </a>
+                          <h4 className="title">Bitcoin</h4>
+                          <span>Invest, Growth</span>
+                          <p className="disc">Invest and trade with bitcoin</p>
+                          {isAuthenticated ? (
+                            <Link
+                              className="rts-btn btn-primary"
+                              to="/dashboard"
+                            >
+                              Invest now
+                            </Link>
+                          ) : (
+                            <Link className="rts-btn btn-primary" to="/login">
+                              Login
+                            </Link>
+                          )}
                         </div>
                       </div>
                     </div>
                   </div>
                   <div className="swiper-slide">
                     <div className="row g-5 w-g-100">
-                      <div className="col-lg-7">
-                        <div className="thumbnail-gallery">
-                          <img
-                            src={Images.gallerygallery02}
-                            alt="business-images"
-                          />
+                      <div
+                        id="secondTrade"
+                        className="col-lg-7"
+                      >
+                        <div id="secondTradew" className="thumbnail-gallery">
+                          <div className="tradingview-widget-container">
+                            <div style={{ display: "none" }} id="tradingview_848c5"></div>
+                          </div>
                         </div>
                       </div>
                       <div className="col-lg-5">
@@ -681,33 +872,37 @@ const Home = () => {
                               alt="Business-gallery"
                             />
                           </div>
-                          <a href="#">
-                            <h4 className="title">Finbiz Pro Business</h4>
-                          </a>
-                          <span>Case Study, Growth</span>
+                          <h4 className="title">Invest in Ethereum</h4>
+                          <span>Invest, Growth</span>
                           <p className="disc">
-                            In the literal sense, the term “Business” means the
-                            state of being busy. But it is a very wide
-                            connotation of business.
+                            Invest in Ethereum with the latest technology
                           </p>
-                          <a
-                            className="rts-btn btn-primary"
-                            href="project-details.html"
-                          >
-                            View Project
-                          </a>
+                          {isAuthenticated ? (
+                            <Link
+                              className="rts-btn btn-primary"
+                              to="/dashboard"
+                            >
+                              Invest now
+                            </Link>
+                          ) : (
+                            <Link className="rts-btn btn-primary" to="/login">
+                              Login
+                            </Link>
+                          )}
                         </div>
                       </div>
                     </div>
                   </div>
                   <div className="swiper-slide">
                     <div className="row g-5 w-g-100">
-                      <div className="col-lg-7">
-                        <div className="thumbnail-gallery">
-                          <img
-                            src={Images.gallerygallery03}
-                            alt="business-images"
-                          />
+                      <div
+                        id="thirdTrade"
+                        className="col-lg-7"
+                      >
+                        <div id="thirdTradew" className="thumbnail-gallery">
+                          <div className="tradingview-widget-container">
+                            <div style={{ display: "none" }} id="tradingview_8wec5"></div>
+                          </div>
                         </div>
                       </div>
                       <div className="col-lg-5">
@@ -718,28 +913,36 @@ const Home = () => {
                               alt="Business-gallery"
                             />
                           </div>
-                          <a href="#">
-                            <h4 className="title">Pro Solution Business</h4>
-                          </a>
-                          <span>Case Study, Growth</span>
+                          <h4 className="title">Litcoin</h4>
+                          <span>Invest, Growth</span>
                           <p className="disc">
-                            But a very wide of business because it covers every
-                            human activity. Business is really concerned with
-                            the production.
+                            Invest in litcoin with the latest technology
                           </p>
-                          <a
-                            className="rts-btn btn-primary"
-                            href="project-details.html"
-                          >
-                            View Project
-                          </a>
+                          {isAuthenticated ? (
+                            <Link
+                              className="rts-btn btn-primary"
+                              to="/dashboard"
+                            >
+                              Invest now
+                            </Link>
+                          ) : (
+                            <Link className="rts-btn btn-primary" to="/login">
+                              Login
+                            </Link>
+                          )}
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div className="swiper-button-next"></div>
-                <div className="swiper-button-prev"></div>
+                <div
+                  className="swiper-button-next"
+                  onClick={() => showCharts("next")}
+                ></div>
+                <div
+                  className="swiper-button-prev"
+                  onClick={() => showCharts("prev")}
+                ></div>
                 <div className="swiper-pagination"></div>
               </div>
             </div>
@@ -911,7 +1114,7 @@ const Home = () => {
           <div className="row bg-white-feature  pt--120 pb--120">
             <div className="col-xl-6 col-lg-12">
               <div className="feature-left-area">
-                <img src={Images.feature01} alt="" />
+                <img src={Images.feature011} alt="" />
               </div>
             </div>
             <div className="col-xl-6 col-lg-12">
@@ -1087,7 +1290,7 @@ const Home = () => {
                     </div>
                     <div className="blog-content">
                       <p>
-                        <span>Business Solution </span>/ by David Dolean
+                        <span>News</span>/ by Admin
                       </p>
                       <a href="blog-details.html">
                         <h5 className="title">
@@ -1113,7 +1316,7 @@ const Home = () => {
                     </div>
                     <div className="blog-content">
                       <p>
-                        <span>Business Solution </span>/ by David Dolean
+                        <span>News</span>/ by Admin
                       </p>
                       <a href="blog-details.html">
                         <h5 className="title">
@@ -1139,7 +1342,7 @@ const Home = () => {
                     </div>
                     <div className="blog-content">
                       <p>
-                        <span>Business Solution </span>/ by David Dolean
+                        <span>News</span>/ by Admin
                       </p>
                       <a href="blog-details.html">
                         <h5 className="title">
@@ -1163,112 +1366,8 @@ const Home = () => {
       {/* <!-- blog area end --> */}
 
       {/* <!-- contact area start --> */}
-      <div className="rts-contact-area contact-one">
-        <div className="container">
-          <div className="row align-items-center g-0">
-            <div className="col-lg-4 col-md-12 col-sm-12 col-12">
-              <div className="contact-image-one">
-                <img src={Images.contact01} alt="" />
-              </div>
-            </div>
-            <div className="col-lg-8 col-md-12 col-sm-12 col-12">
-              <div className="contact-form-area-one">
-                <div className="rts-title-area contact text-start">
-                  <p className="pre-title">Contact Us</p>
-                  <h2 className="title">Feel free to say Hello</h2>
-                </div>
-                <div id="form-messages"></div>
-                <form
-                  id="contact-form"
-                  action="https://reactheme.com/products/html/finbiz/mailer.php"
-                  method="post"
-                >
-                  <div className="name-email">
-                    <input
-                      type="text"
-                      placeholder="Your Name"
-                      name="name"
-                      required
-                    />
-                    <input
-                      type="email"
-                      placeholder="Email Address"
-                      name="email"
-                      required
-                    />
-                  </div>
-                  <input
-                    type="text"
-                    placeholder="Business Topic"
-                    name="subject"
-                  />
-                  <textarea
-                    placeholder="Type Your Message"
-                    name="message"
-                  ></textarea>
-                  <button type="submit" className="rts-btn btn-primary">
-                    Submit Message
-                  </button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <ContactForm />
       {/* <!-- contact area end --> */}
-
-      {/* <!-- map area start --> */}
-      <div className="rts-map-area bg-light-white">
-        <div className="container-fluid">
-          <div className="row align-items-center">
-            <div className="col-lg-6">
-              {/* <!-- map area left --> */}
-              <div className="mapdetails-inner-one">
-                <div className="left-area single-wized">
-                  <h5 className="title">Get in touch</h5>
-                  <div className="details">
-                    <p>Work and general inquiries</p>
-                    <a className="number" href="#">
-                      +3509.120-8605
-                    </a>
-
-                    <p className="time-header">Assistance hours:</p>
-                    <p className="time">
-                      Monday – Friday <br /> 6 am to 8 pm EST
-                    </p>
-                  </div>
-                </div>
-                <div className="right-area single-wized">
-                  <h5 className="title">Post Address</h5>
-                  <div className="details">
-                    <p>Service Office</p>
-                    <a href="#">
-                      786 Dortans Ave, Otam Sites, <br />
-                      CA 36108, United States
-                    </a>
-
-                    <p className="headoffice">Head Office</p>
-                    <p className="office">142 Drive Lane. USA</p>
-                  </div>
-                </div>
-              </div>
-              {/* <!-- map area right --> */}
-            </div>
-            <div className="col-lg-6">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14602.288851207937!2d90.47855065!3d23.798243149999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1663151706353!5m2!1sen!2sbd"
-                width="600"
-                height="450"
-                style={{ border: "0" }}
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              ></iframe>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* <!-- map area end --> */}
 
       {/* <!-- start header area --> */}
       <Footer />

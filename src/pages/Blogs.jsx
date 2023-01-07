@@ -5,10 +5,12 @@ import Sidebar from "components/Sidebar";
 import TopBanner from "components/TopBanner";
 import React from "react";
 import { Link } from "react-router-dom";
+    import HomeHelmet from "components/Helmets/HomeHelmet";
 
 const Blogs = () => {
   return (
     <>
+<HomeHelmet title={"Blog"} />
       {/* <!-- start header area --> */}
       {/* <!-- start header area --> */}
       <header classNameName="header--sticky header-one ">

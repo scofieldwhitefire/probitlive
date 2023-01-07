@@ -4,10 +4,12 @@ import Menu from "components/Menu";
 import Sidebar from "components/Sidebar";
 import TopBanner from "components/TopBanner";
 import React from "react";
+import HomeHelmet from "components/Helmets/HomeHelmet";
 
 const Contact = () => {
   return (
     <>
+      <HomeHelmet title={"Contact Us"} />
       {/* <!-- start header area --> */}
       {/* <!-- start header area --> */}
       <header className="header--sticky header-one ">
@@ -15,9 +17,7 @@ const Contact = () => {
         <Menu />
       </header>
       {/* <!-- End header area --> */}
-
       <Sidebar />
-
       <div id="anywhere-home"></div>
       {/* <!-- start breadcrumb area --> */}
       <div className="rts-breadcrumb-area breadcrumb-bg bg_image">
@@ -39,7 +39,6 @@ const Contact = () => {
         </div>
       </div>
       {/* <!-- end breadcrumb area --> */}
-
       {/* <!-- contact single area start --> */}
       <div className="rts-contact-area rts-section-gap">
         <div className="container">
@@ -108,7 +107,6 @@ const Contact = () => {
         </div>
       </div>
       {/* <!-- conact single area end --> */}
-
       {/* <!-- bizup map area start --> */}
       <div className="rts-contact-map-area">
         <div className="contaciner-fluid">
@@ -134,7 +132,6 @@ const Contact = () => {
         </div>
       </div>
       {/* <!-- bizup map area end --> */}
-
       {/* <!-- conact us form fluid start --> */}
       <div className="rts-contact-form-area">
         <div className="container">
@@ -186,11 +183,9 @@ const Contact = () => {
         </div>
       </div>
       {/* <!-- conact us form fluid end --> */}
-
       {/* <!-- start header area --> */}
       <Footer />
       {/* <!-- ENd Header Area --> */}
-
       {/* <!-- start loader --> */}
       <div className="loader-wrapper">
         <div className="loader"></div>
@@ -198,7 +193,6 @@ const Contact = () => {
         <div className="loader-section section-right"></div>
       </div>
       {/* <!-- End loader --> */}
-
       {/* <!-- progress Back to top --> */}
       <div className="progress-wrap">
         <svg

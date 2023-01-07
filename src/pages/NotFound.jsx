@@ -4,10 +4,12 @@ import Menu from "components/Menu";
 import Sidebar from "components/Sidebar";
 import TopBanner from "components/TopBanner";
 import React from "react";
+import HomeHelmet from "components/Helmets/HomeHelmet";
 
 const NotFound = () => {
   return (
     <>
+      <HomeHelmet title={"Page Not Found"} />
       {/* <!-- start header area --> */}
       {/* <!-- start header area --> */}
       <header className="header--sticky header-one ">
@@ -15,11 +17,8 @@ const NotFound = () => {
         <Menu />
       </header>
       {/* <!-- End header area --> */}
-
       <Sidebar />
-
       <div id="anywhere-home"></div>
-
       {/* <!-- rts- 404 area start --> */}
       <div class="rts-404-area rts-section-gap">
         <div class="container">
@@ -43,11 +42,9 @@ const NotFound = () => {
         </div>
       </div>
       {/* <!-- rts- 404 area end --> */}
-
       {/* <!-- start header area --> */}
       <Footer />
       {/* <!-- ENd Header Area --> */}
-
       {/* <!-- start loader --> */}
       <div className="loader-wrapper">
         <div className="loader"></div>
@@ -55,7 +52,6 @@ const NotFound = () => {
         <div className="loader-section section-right"></div>
       </div>
       {/* <!-- End loader --> */}
-
       {/* <!-- progress Back to top --> */}
       <div className="progress-wrap">
         <svg
