@@ -9,6 +9,7 @@ import HomeHelmet from "components/Helmets/HomeHelmet";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import ContactForm from "components/ContactForm";
+import { ClientJS } from 'clientjs'
 
 const Home = () => {
   const { isAuthenticated } = useSelector((state) => state.user);
@@ -18,6 +19,9 @@ const Home = () => {
   const onLoadScriptRef2 = useRef();
   const ch = useState(!1);
   let [n, setN] = useState(1);
+  const client = new ClientJS()
+
+  const isMobile = client.isMobile()
 
   let tvScriptLoadingPromise;
 
@@ -176,9 +180,14 @@ const Home = () => {
                   risus suscipit <br /> Dui feugiat fusce conubia ridiculus
                   tristique parturient
                 </p>
-                <a href="#" className="rts-btn btn-primary color-h-black">
-                  Get Consultant
-                </a>
+                {isAuthenticated?(
+                <Link to="/dashboard" className="rts-btn btn-primary color-h-black">
+                  Dashboard
+                </Link>
+                ):
+                (<Link to="/login" className="rts-btn btn-primary color-h-black">
+                  Get Started
+                </Link>)}
                 <img
                   className="shape-img one"
                   src={Images.shape01}
@@ -208,9 +217,14 @@ const Home = () => {
                   risus suscipit <br /> Dui feugiat fusce conubia ridiculus
                   tristique parturient
                 </p>
-                <a href="#" className="rts-btn btn-primary color-h-black">
-                  Get Consultant
-                </a>
+                {isAuthenticated?(
+                <Link to="/dashboard" className="rts-btn btn-primary color-h-black">
+                  Dashboard
+                </Link>
+                ):
+                (<Link to="/login" className="rts-btn btn-primary color-h-black">
+                  Get Started
+                </Link>)}
                 <img
                   className="shape-img one"
                   src={Images.shape01}
@@ -236,9 +250,14 @@ const Home = () => {
                   risus suscipit <br /> Dui feugiat fusce conubia ridiculus
                   tristique parturient
                 </p>
-                <a href="#" className="rts-btn btn-primary color-h-black">
-                  Get Consultant
-                </a>
+                {isAuthenticated?(
+                <Link to="/dashboard" className="rts-btn btn-primary color-h-black">
+                  Dashboard
+                </Link>
+                ):
+                (<Link to="/login" className="rts-btn btn-primary color-h-black">
+                  Get Started
+                </Link>)}
                 <img
                   className="shape-img one"
                   src={Images.shape01}
@@ -406,11 +425,11 @@ const Home = () => {
             <div className="col-lg-6 col-md-12 col-sm-12 col-12 order-lg-2 order-md-1 order-sm-1 order-1">
               <div className="about-one-thumbnail">
                 <img src={Images.about011} alt="about-finbiz" />
-                <img
+                {!isMobile&&(<img
                   className="small-img"
                   src={Images.about022}
                   alt="pro-small"
-                />
+                />)}
                 <div className="experience">
                   <div className="left single">
                     <h2 className="title">10+</h2>
@@ -618,7 +637,7 @@ const Home = () => {
             {/* <!-- business goal left --> */}
             <div className="col-lg-6">
               <div className="business-goal-one">
-                <img src={Images.goal011} alt="Business_Goal" />
+                {!isMobile&&(<img src={Images.goal011} alt="Business_Goal" />)}
                 <img
                   className="small"
                   src={Images.goalsm011}
