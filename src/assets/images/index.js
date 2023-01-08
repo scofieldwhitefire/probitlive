@@ -110,6 +110,9 @@ import faq02s from "./faq/02.svg";
 import location from "./contact/shape/location.svg";
 import a404 from "./contact/shape/404.png";
 
+import profileImg from "./profile-img.png"
+import icon from "./icon.png"
+
 export const Logos = {
   logo1,
   logo2,
@@ -224,4 +227,7 @@ export const Images = {
   faq02s,
   location,
   a404,
+
+  profileImg,
+  icon,
 };

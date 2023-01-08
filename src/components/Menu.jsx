@@ -1,9 +1,13 @@
 import { Images, Logos } from 'assets/images';
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { ClientJS } from "clientjs";
 
 const Menu = () => {
   const { isAuthenticated } = useSelector((state) => state.user);
+    const client = new ClientJS();
+
+    const isMobile = client.isMobile();
 
   return (
     <>
@@ -14,7 +18,7 @@ const Menu = () => {
               <div className="thumbnail">
                 <Link to="/">
                   {/* <img src={Logos.logo1} alt="pro-logo" /> */}
-                  <h4 className="text-[22px] lg:text-[32px] font-bold">
+                  <h4 className="text-[23px] lg:text-[32px] font-bold">
                     Bitbing<span className="font-light">live</span>
                   </h4>
                 </Link>
@@ -39,16 +43,16 @@ const Menu = () => {
                         FAQs
                       </Link>
                     </li>
-                    {/* <li>
-                      <Link className="nav-item" to="/blogs">
-                        Blog
-                      </Link>
-                    </li> */}
                     <li>
                       <Link className="nav-item" to="/contact">
                         Contact
                       </Link>
                     </li>
+                    {isMobile&&(<li>
+                      <Link className="nav-item" to="/about-us">
+                        About Us
+                      </Link>
+                    </li>)}
                   </ul>
                 </nav>
                 <div className="button-area">
