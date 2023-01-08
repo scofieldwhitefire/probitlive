@@ -67,8 +67,11 @@ import service02 from "./service/02.jpg";
 import service03 from "./service/03.jpg";
 import service04 from "./service/04.jpg";
 import service07 from "./service/07.jpg";
+import service07p from "./service/07.png";
 import service08 from "./service/08.jpg";
+import service08p from "./service/08.png";
 import service09 from "./service/09.jpg";
+import service09p from "./service/09.png";
 import serviceicon13 from "./service/icon/13.svg";
 import serviceicon14 from "./service/icon/14.svg";
 import serviceicon15 from "./service/icon/15.svg";
@@ -103,6 +106,7 @@ import tmlg01 from "./team/tm/lg-01.jpg";
 import tmlg02 from "./team/tm/lg-02.jpg";
 import tmlg03 from "./team/tm/lg-03.jpg";
 import faq02 from "./faq/02.png";
+import faq02s from "./faq/02.svg";
 import location from "./contact/shape/location.svg";
 import a404 from "./contact/shape/404.png";
 
@@ -178,8 +182,11 @@ export const Images = {
   service03,
   service04,
   service07,
+  service07p,
   service08,
+  service08p,
   service09,
+  service09p,
   serviceicon13,
   serviceicon14,
   serviceicon15,
@@ -214,6 +221,7 @@ export const Images = {
   tmlg02,
   tmlg03,
   faq02,
+  faq02s,
   location,
   a404,
 };

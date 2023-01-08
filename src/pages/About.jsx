@@ -4,11 +4,14 @@ import Menu from "components/Menu";
 import Sidebar from "components/Sidebar";
 import TopBanner from "components/TopBanner";
 import HomeHelmet from "components/Helmets/HomeHelmet";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const About = () => {
+  const { isAuthenticated } = useSelector((state) => state.user);
   return (
     <>
-          <HomeHelmet title={"About Us"} />
+      <HomeHelmet title={"About Us"} />
       {/* <!-- start header area --> */}
       {/* <!-- start header area --> */}
       <header className="header--sticky header-one ">
@@ -59,7 +62,7 @@ const About = () => {
                     src={Images.about04}
                     alt="BUsiness_image"
                   />
-                  <div className="goal-button-wrapper">
+                  {/* <div className="goal-button-wrapper">
                     <div className="vedio-icone">
                       <a id="play-video" className="video-play-button" href="#">
                         <span></span>
@@ -68,49 +71,54 @@ const About = () => {
                         <a className="video-overlay-close">×</a>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
             <div className="col-lg-6">
               <div className="about-progress-inner">
                 <div className="title-area">
-                  <span>JUST A CONSULTANCY</span>
+                  <span>Broker Name Features</span>
                   <h2 className="title">
-                    Get Consulting For Better Business Growth
+                    THE MOST ADVANCE AND SECURE CRYPTOCURRENCY PLATFORM.
                   </h2>
                 </div>
                 {/* <!-- inner start --> */}
                 <div className="inner">
                   <p className="disc">
-                    Dapibus curae risus rutrum curabitur nunc sociis nullam
-                    nisl, aliquet quis iaculis scelerisque primis massa
-                    imperdiet, dis senectus blandit aptent nulla cubilia sodales
-                    convallis tortor pellentesque nulla.
+                    Trade from Anywhere. Trading at your Fingertips. Compatible
+                    with multiple devices, start trading with safety and
+                    convenience.
                   </p>
                   <div className="rts-progress-one-wrapper">
                     <div className="single-progress">
                       <div className="progress-top">
                         <p className="progress-title">Business Strategy</p>
-                        <span className="persectage">70%</span>
+                        <span className="persectage">80%</span>
                       </div>
                       <div className="meter cadetblue">
-                        <span data-progress="70" style={{width:"0"}}></span>
+                        <span data-progress="80" style={{ width: "0" }}></span>
                       </div>
                     </div>
                     <div className="single-progress">
                       <div className="progress-top">
-                        <p className="progress-title">Company Strength</p>
-                        <span className="persectage">93%</span>
+                        <p className="progress-title">Trading Strength</p>
+                        <span className="persectage">99%</span>
                       </div>
                       <div className="meter">
-                        <span data-progress="93" style={{width:"0"}}></span>
+                        <span data-progress="99" style={{ width: "0" }}></span>
                       </div>
                     </div>
                   </div>
-                  <a href="#" className="rts-btn btn-primary">
-                    Make an Appointment
-                  </a>
+                  {isAuthenticated ? (
+                    <Link to="/dashboard" className="rts-btn btn-primary">
+                      Dashboard
+                    </Link>
+                  ) : (
+                    <Link to="/register" className="rts-btn btn-primary">
+                      Get started
+                    </Link>
+                  )}
                 </div>
                 {/* <!-- end --> */}
               </div>
@@ -134,28 +142,18 @@ const About = () => {
                 <div className="service-one-inner-four">
                   <div className="big-thumbnail-area">
                     <a href="#" className="thumbnail">
-                      <img
-                        src={Images.service07}
-                        alt="Business-service"
-                      />
+                      <img src={Images.service07p} alt="Business-service" />
                     </a>
                     <div className="content">
-                      <img
-                        src={Images.serviceicon13}
-                        alt="Business-icon"
-                      />
-                      <h5 className="title">Business Consultancy</h5>
+                      <img src={Images.serviceicon15} alt="Business-icon" />
+                      <h5 className="title">FLEXABLE TRADING</h5>
                       <p className="disc">
-                        Aenean augue venenatis est porttitor fames aptent
-                        lobortis nam potenti
+                        Latest trends in options trading: Digital Option,
+                        Pending Orders, Trades Copying.
                       </p>
                     </div>
                     <a href="service-details.html" className="over_link"></a>
                   </div>
-                  <a href="service-details.html" className="rts-btn btn-primary">
-                    {" "}
-                    Read More<i className="fal fa-arrow-right"></i>
-                  </a>
                 </div>
               </div>
               {/* <!-- start single Service --> */}
@@ -163,28 +161,18 @@ const About = () => {
                 <div className="service-one-inner-four">
                   <div className="big-thumbnail-area">
                     <a href="#" className="thumbnail">
-                      <img
-                        src={Images.service08}
-                        alt="Business-service"
-                      />
+                      <img src={Images.service08p} alt="Business-service" />
                     </a>
                     <div className="content">
-                      <img
-                        src={Images.serviceicon14}
-                        alt="Business-icon"
-                      />
-                      <h5 className="title">Business Appoinment</h5>
+                      <img src={Images.serviceicon15} alt="Business-icon" />
+                      <h5 className="title">EXPERT TRADERS</h5>
                       <p className="disc">
-                        Aenean augue venenatis est porttitor fames aptent
-                        lobortis nam potenti
+                        Our highly skilled traders assist our clients in
+                        developing a strong trading portfolio.
                       </p>
                     </div>
                     <a href="service-details.html" className="over_link"></a>
                   </div>
-                  <a href="service-details.html" className="rts-btn btn-primary">
-                    {" "}
-                    Read More<i className="fal fa-arrow-right"></i>
-                  </a>
                 </div>
               </div>
               {/* <!-- start single Service --> */}
@@ -192,28 +180,18 @@ const About = () => {
                 <div className="service-one-inner-four">
                   <div className="big-thumbnail-area">
                     <a href="#" className="thumbnail">
-                      <img
-                        src={Images.service09}
-                        alt="Business-service"
-                      />
+                      <img src={Images.service09p} alt="Business-service" />
                     </a>
                     <div className="content">
-                      <img
-                        src={Images.serviceicon15}
-                        alt="Business-icon"
-                      />
-                      <h5 className="title">Consultancy Foundation</h5>
+                      <img src={Images.serviceicon15} alt="Business-icon" />
+                      <h5 className="title">SAFE AND SECURE</h5>
                       <p className="disc">
-                        Aenean augue venenatis est porttitor fames aptent
-                        lobortis nam potenti
+                        Our website can resists attacks of any size. With
+                        advanced security systems.
                       </p>
                     </div>
                     <a href="service-details.html" className="over_link"></a>
                   </div>
-                  <a href="service-details.html" className="rts-btn btn-primary">
-                    {" "}
-                    Read More<i className="fal fa-arrow-right"></i>
-                  </a>
                 </div>
               </div>
             </div>
@@ -223,14 +201,13 @@ const About = () => {
               <div className="cta-one-inner">
                 <div className="cta-left">
                   <h3 className="title animated fadeIn">
-                    Let’s discuss about how we can help make your business
-                    better
+                    Let’s discuss about how we can help make your trading better
                   </h3>
                 </div>
                 <div className="cta-right">
-                  <a className="rts-btn btn-white" href="#">
-                    Lets Work Togather
-                  </a>
+                  <Link className="rts-btn btn-white" to="/register">
+                    Lets Work Together
+                  </Link>
                 </div>
               </div>
             </div>
@@ -238,7 +215,6 @@ const About = () => {
         </div>
       </div>
       {/* <!-- rts services area End --> */}
-
 
       {/* <!-- rts faq section area --> */}
       <div className="rts-faq-section rts-section-gap rts-faq-bg bg_image">
@@ -249,9 +225,9 @@ const About = () => {
                 <div className="title-area-faq">
                   <span className="sub">WHY CHOOSE US</span>
                   <h2 className="title">
-                    We Are Experienced {' '}
+                    We Are Experienced{" "}
                     <span className="sm-title">
-                      Business <span>Solution</span>
+                      Trade <span>Investment</span>
                     </span>
                   </h2>
                 </div>
@@ -268,8 +244,7 @@ const About = () => {
                           aria-expanded="true"
                           aria-controls="collapseOne"
                         >
-                          <span>01. </span> What should i included my personal
-                          details?
+                          <span>01. </span> Who are the trading experts?
                         </button>
                       </h2>
                       <div
@@ -279,10 +254,10 @@ const About = () => {
                         data-bs-parent="#accordionExample"
                       >
                         <div className="accordion-body">
-                          Neque partrient nascetur facilisis suscipit ridiculus
-                          agna lobortis imperdiet vivamus est aliquam euismod
-                          nector quam convallis ornare justo service lifereu
-                          visionary sources unleash online businesss solutions
+                          NWe carefully select expert applicants. We get to know
+                          them as a trader and examine their trading performance
+                          over a period of time. We also tend to look for expert
+                          who al
                         </div>
                       </div>
                     </div>
@@ -296,8 +271,7 @@ const About = () => {
                           aria-expanded="false"
                           aria-controls="collapseTwo"
                         >
-                          <span>02. </span> Where i can find my business growth
-                          result?
+                          <span>02. </span> How does copy trading work?
                         </button>
                       </h2>
                       <div
@@ -307,10 +281,23 @@ const About = () => {
                         data-bs-parent="#accordionExample"
                       >
                         <div className="accordion-body">
-                          Neque partrient nascetur facilisis suscipit ridiculus
-                          agna lobortis imperdiet vivamus est aliquam euismod
-                          nector quam convallis ornare justo service lifereu
-                          visionary sources unleash online businesss solutions
+                          Here is how the copier works: You, as an investor, 
+                          simply select an expert or experts that you want to copy trades from. 
+                          Once you are signed up, this is the only action needed on your part.<br/>
+                          Once you’ve taken care of the above, you are all set. There are no 
+                          codes that you need to run or signals for you to manually input. Our 
+                          software will handle the trade copying automatically on your behalf. 
+                          We monitor your experts trading activity and as soon as there is a trade, 
+                          we calculate all the necessary parameters and execute the trade.<br/>
+                          The only thing you have to make sure of is that you have enough available 
+                          base currency that your expert trades with, in your trading account. 
+                          How much is enough? First, you must meet the exchanges minimum order amount 
+                          (let’s say about $10 per trade to be safe). That means that if your expert executes 
+                          a 5% order, you must have at least $300 in your account total value 
+                          (at 100% expert allocation as an example). This also means that you need to have at 
+                          least 10% or higher in available base currency to avoid missed trades.<br/>When the 
+                          expert exits a position, you too will exit it. Automatically. You can also change 
+                          allocation at any time.
                         </div>
                       </div>
                     </div>
@@ -324,7 +311,7 @@ const About = () => {
                           aria-expanded="false"
                           aria-controls="collapseThree"
                         >
-                          <span>03. </span> Did you get any business consultant?
+                          <span>03. </span> How do your ether contracts work?
                         </button>
                       </h2>
                       <div
@@ -334,10 +321,15 @@ const About = () => {
                         data-bs-parent="#accordionExample"
                       >
                         <div className="accordion-body">
-                          Neque partrient nascetur facilisis suscipit ridiculus
-                          agna lobortis imperdiet vivamus est aliquam euismod
-                          nector quam convallis ornare justo service lifereu
-                          visionary sources unleash online businesss solutions
+                          When you purchase an Ether mining contract, you buy a share of a GPU (“graphics processing unit“) 
+                          to mine Ethereum. The hashing algorithm used to mine Ether is called Ethash (or Dagger-Hashimoto).<br/>
+                          Ethash requires the so called DAG file in order to perform the calculations. 
+                          This file grows over time, which means that more operations for each hashing 
+                          operation need to be performed. This means that the effective hashrate 
+                          decreases a little each time the DAG file grows.<br/>
+                          This has to be considered when comparing the theoretical output of your hashpower. 
+                          Online calculators do not take this into account.<br/>
+                          Also, please keep in mind that some of our products have a maintenance fee attached.
                         </div>
                       </div>
                     </div>
@@ -348,7 +340,7 @@ const About = () => {
             </div>
             <div className="col-lg-6">
               <div className="thumbnail-faq-four">
-                <img src={Images.faq02} alt="" />
+                <img src={Images.faq02s} alt="" />
               </div>
             </div>
           </div>
@@ -362,7 +354,7 @@ const About = () => {
           <div className="row">
             <div className="rts-title-area feedback team text-center">
               <p className="pre-title">Feedbacks</p>
-              <h2 className="title">Customer Feedbacks</h2>
+              <h2 className="title">Client Feedbacks</h2>
             </div>
           </div>
           <div className="row g-5 mt--20">

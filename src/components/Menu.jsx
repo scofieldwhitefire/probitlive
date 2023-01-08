@@ -15,7 +15,7 @@ const Menu = () => {
                 <Link to="/">
                   {/* <img src={Logos.logo1} alt="pro-logo" /> */}
                   <h4 className="text-[22px] lg:text-[32px] font-bold">
-                    Pro<span style={{ color: "#DF0A0A" }}>Bit</span>Live
+                    Bitbing<span className="font-light">live</span>
                   </h4>
                 </Link>
               </div>
@@ -25,9 +25,9 @@ const Menu = () => {
                 <nav className="nav-main mainmenu-nav d-none d-xl-block">
                   <ul className="mainmenu">
                     <li>
-                      <Link className="nav-item" to="/services">
+                      {/* <Link className="nav-item" to="/services">
                         Services
-                      </Link>
+                      </Link> */}
                     </li>
                     {/* <li>
                       <Link className="nav-item" to="/plans">
@@ -39,11 +39,11 @@ const Menu = () => {
                         FAQs
                       </Link>
                     </li>
-                    <li>
+                    {/* <li>
                       <Link className="nav-item" to="/blogs">
                         Blog
                       </Link>
-                    </li>
+                    </li> */}
                     <li>
                       <Link className="nav-item" to="/contact">
                         Contact

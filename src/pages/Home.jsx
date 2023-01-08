@@ -642,9 +642,9 @@ const Home = () => {
                   </h3>
                 </div>
                 <div className="cta-right">
-                  <a className="rts-btn btn-white" href="appoinment.html">
+                  <Link className="rts-btn btn-white" to="/register">
                     Lets Work Together
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -1269,7 +1269,7 @@ const Home = () => {
       {/* <!-- start client feed back section End --> */}
 
       {/* <!-- blog area start --> */}
-      <div className="rts-blog-area rts-section-gap bg-secondary">
+      {/* <div className="rts-blog-area rts-section-gap bg-secondary">
         <div className="container">
           <div className="row">
             <div className="col-12">
@@ -1364,7 +1364,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* <!-- blog area end --> */}
 
       {/* <!-- contact area start --> */}

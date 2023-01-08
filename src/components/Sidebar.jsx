@@ -15,32 +15,29 @@ const Sidebar = () => {
           <Link className="logo-1" to="/">
             {/* <img className="logo" src={Logos.logo1} alt="pro_logo" /> */}
             <h4 className="text-[28px] lg:text-[32px] font-bold mt-4">
-                    Pro<span style={{ color: "#DF0A0A" }}>Bit</span>Live
-                  </h4>
+              Bitbing<span className="font-light">live</span>
+            </h4>
           </Link>
           <Link className="logo-2" to="/">
             {/* <img className="logo" src={Logos.logo4} alt="pro_logo" /> */}
             <h4 className="text-[28px] lg:text-[32px] font-bold mt-4">
-                    Pro<span style={{ color: "#DF0A0A" }}>Bit</span>Live
-                  </h4>
+              Bitbing<span className="font-light">live</span>
+            </h4>
           </Link>
           <Link className="logo-3" to="/">
             {/* <img className="logo" src={Logos.logo3} alt="pro_logo" /> */}
             <h4 className="text-[28px] lg:text-[32px] font-bold mt-4">
-                    Pro<span style={{ color: "#DF0A0A" }}>Bit</span>Live
-                  </h4>
+              Bitbing<span className="font-light">live</span>
+            </h4>
           </Link>
           <Link className="logo-4" to="/">
             {/* <img className="logo" src={Logos.logo5} alt="pro_logo" /> */}
             <h4 className="text-[28px] lg:text-[32px] font-bold mt-4">
-                    Pro<span style={{ color: "#DF0A0A" }}>Bit</span>Live
-                  </h4>
+              Bitbing<span className="font-light">live</span>
+            </h4>
           </Link>
           <div className="body d-none d-xl-block">
-            <p className="disc">
-              We must explain to you how all seds this mistakens idea denouncing
-              pleasures and praising account.
-            </p>
+            <p className="disc">Top crypto investment company</p>
             <div className="get-in-touch">
               {/* <!-- title --> */}
               <div className="h6 title">Get In Touch</div>
@@ -55,13 +52,13 @@ const Sidebar = () => {
                 {/* <!-- single --> */}
                 <div className="single">
                   <i className="fas fa-envelope"></i>
-                  <a href="#">support@probitlive.com</a>
+                  <a href="#">support@bitbinglive.com</a>
                 </div>
                 {/* <!-- single ENd --> */}
                 {/* <!-- single --> */}
                 <div className="single">
                   <i className="fas fa-globe"></i>
-                  <a href="#">www.probitlive.com</a>
+                  <a href="#">www.bitbinglive.com</a>
                 </div>
                 {/* <!-- single ENd --> */}
                 {/* <!-- single --> */}
@@ -91,18 +88,18 @@ const Sidebar = () => {
           <div className="body-mobile d-block d-xl-none">
             <nav className="nav-main mainmenu-nav">
               <ul className="mainmenu">
-                <li>
+                {/* <li>
                   <Link to="/services">Services</Link>
-                </li>
+                </li> */}
                 {/* <li>
                   <Link to="/plans">Price & Plan</Link>
                 </li> */}
                 <li>
                   <Link to="/faqs">FAQs</Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link to="/blogs">Blog</Link>
-                </li>
+                </li> */}
                 <li>
                   <Link to="/contact">Contact</Link>
                 </li>
@@ -135,7 +132,7 @@ const Sidebar = () => {
                 <Link
                   to="/login"
                   className="mx-2 px-4 rts-btn btn-primary ml--20 ml_sm--5 header-one-btn quote-btnmenu"
-                > 
+                >
                   Login
                 </Link>
                 <Link
