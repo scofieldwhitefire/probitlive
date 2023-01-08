@@ -38,3 +38,19 @@
 .table-rep-plugin .checkbox-row input[type="checkbox"]:checked + label::after {
   content: "\f00c";
 }
+.text-primarys {
+  color: var(--color-primary);
+}
+.text-primarys-light {
+  color: rgba(244, 106, 106, 0.25);
+}
+.bg-primarys {
+  background-color: var(--color-primary);
+}
+.bg-primarys:hover {
+  background-color: var(--color-primary-5);
+}
+.bg-primarys.bg-soft {
+  background-color: var(--color-primary);
+  opacity: 0.25
+}

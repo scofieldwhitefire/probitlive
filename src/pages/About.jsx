@@ -6,9 +6,14 @@ import TopBanner from "components/TopBanner";
 import HomeHelmet from "components/Helmets/HomeHelmet";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { ClientJS } from "clientjs";
 
 const About = () => {
   const { isAuthenticated } = useSelector((state) => state.user);
+
+    const client = new ClientJS();
+
+    const isMobile = client.isMobile();
   return (
     <>
       <HomeHelmet title={"About Us"} />
@@ -53,15 +58,15 @@ const About = () => {
               <div className="about-image-v-inner">
                 <div className="image-area">
                   <img
-                    className="mt--110 img-1"
+                    className={`mt--110 img-1 ${isMobile&&'w-full'}`}
                     src={Images.about03}
                     alt="BUsiness_image"
                   />
-                  <img
+                  {!isMobile&&(<img
                     className="img-over"
                     src={Images.about04}
                     alt="BUsiness_image"
-                  />
+                  />)}
                   {/* <div className="goal-button-wrapper">
                     <div className="vedio-icone">
                       <a id="play-video" className="video-play-button" href="#">
@@ -254,10 +259,7 @@ const About = () => {
                         data-bs-parent="#accordionExample"
                       >
                         <div className="accordion-body">
-                          NWe carefully select expert applicants. We get to know
-                          them as a trader and examine their trading performance
-                          over a period of time. We also tend to look for expert
-                          who al
+                          We carefully select expert applicants. We get to know them as a trader and examine their trading performance over a period of time. We also tend to look for expert who already have a following to further confirm their competence (social proof). You can also read about every expert on their individual performance pages.
                         </div>
                       </div>
                     </div>

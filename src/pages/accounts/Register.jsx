@@ -5,6 +5,7 @@ import { Register, checkEmaila } from "features/users";
 
 import { ToastContainer, toast } from "react-toastify";
 import DashboardHelmet from "components/Helmets/Dashboard";
+import { Images } from "assets/images";
 
 const initial = {
   first_name: "",
@@ -114,24 +115,24 @@ const Login = () => {
   if (isAuthenticated) return <Navigate to="/dashboard" />;
   return (
     <>
-      <DashboardHelmet />
+      <DashboardHelmet title="Register new account" />
       <ToastContainer />
       <div className="account-pages my-5 pt-sm-5">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-md-8 col-lg-6 col-xl-5">
               <div className="card overflow-hidden">
-                <div className="bg-primary bg-soft">
+                <div className="bg-danger bg-soft">
                   <div className="row">
                     <div className="col-7">
-                      <div className="text-primary p-4">
-                        <h5 className="text-primary">Free Register</h5>
-                        <p>Get your free Probitlive account now.</p>
+                      <div className="text-s p-4">
+                        <h5 className="text-s">Free Register</h5>
+                        <p>Get your free Bitbinglive account now.</p>
                       </div>
                     </div>
                     <div className="col-5 align-self-end">
                       <img
-                        src="assets/images/profile-img.png"
+                        src={Images.profileImg}
                         alt=""
                         className="img-fluid"
                       />
@@ -144,7 +145,7 @@ const Login = () => {
                       <div className="avatar-md profile-user-wid mb-4">
                         <span className="avatar-title rounded-circle bg-light">
                           <img
-                            src="assets/images/logo.svg"
+                            src={Images.icon}
                             alt=""
                             className="rounded-circle"
                             height="34"
@@ -276,7 +277,7 @@ const Login = () => {
 
                       <div className="mt-4 d-grid">
                         <button
-                          className="btn btn-primary waves-effect waves-light"
+                          className="hover:!bg-[#FA360A] btn btn-primary waves-effect waves-light"
                           type="submit"
                         >
                           Register
@@ -285,8 +286,8 @@ const Login = () => {
 
                       <div className="mt-4 text-center">
                         <p className="mb-0">
-                          By registering you agree to the Probitlive{" "}
-                          <Link to="#" className="text-primary">
+                          By registering you agree to the Bitbinglive{" "}
+                          <Link to="#" className="text-primarys">
                             Terms of Use
                           </Link>
                         </p>
@@ -299,11 +300,11 @@ const Login = () => {
                 <div>
                   <p>
                     Already have an account?{" "}
-                    <Link to="/login" className="fw-medium text-primary">
+                    <Link to="/login" className="fw-medium text-primarys">
                       Login
                     </Link>
                   </p>
-                  <p>© {new Date().getFullYear()} Probitlive. </p>
+                  <p>© {new Date().getFullYear()} Bitbinglive. </p>
                 </div>
               </div>
             </div>

@@ -7,6 +7,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import DashboardHelmet from "components/Helmets/Dashboard";
+import { Images } from "assets/images";
 
 const initial = {
   username: "",
@@ -21,7 +22,7 @@ const Login = () => {
   const { username, password } = formData;
 
   const Toast = (t, m) => {
-    toast.clearWaitingQueue()
+    toast.clearWaitingQueue();
     if (t === "success") {
       toast.success(m);
     } else if (t === "info") {
@@ -33,17 +34,15 @@ const Login = () => {
     }
   };
 
-  const viewPassword = (e) => {
-    
-  };
-  
+  const viewPassword = (e) => {};
+
   const onChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    let ce = !0
+    let ce = !0;
 
     if (username === null || username === "") {
       Toast("error", "Username is required");
@@ -55,38 +54,38 @@ const Login = () => {
     }
 
     if (ce) {
-    const res = await dispatch(login({ username, password }));
-    if (res.meta.requestStatus.toLowerCase() === "rejected") {
-      if (res?.payload?.status === 401) {
-        Toast("error", res?.payload?.detail);
-      } else {
-        Toast("error", "Unable to process your request");
+      const res = await dispatch(login({ username, password }));
+      if (res.meta.requestStatus.toLowerCase() === "rejected") {
+        if (res?.payload?.status === 401) {
+          Toast("error", res?.payload?.detail);
+        } else {
+          Toast("error", "Unable to process your request");
+        }
       }
-    }
     }
   };
 
   if (isAuthenticated) return <Navigate to="/dashboard" />;
   return (
     <>
-      <DashboardHelmet />
+      <DashboardHelmet title="Login" />
       <ToastContainer />
       <div className="account-pages my-5 pt-sm-5">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-md-8 col-lg-6 col-xl-5">
               <div className="card overflow-hidden">
-                <div className="bg-primary bg-soft">
+                <div className="bg-danger bg-soft">
                   <div className="row">
                     <div className="col-7">
-                      <div className="text-primary p-4">
-                        <h5 className="text-primary">Welcome Back!</h5>
-                        <p>Login to continue to Probitlive.</p>
+                      <div className="text-primarys p-4">
+                        <h5 className="text-primarys">Welcome Back!</h5>
+                        <p>Login to continue to Bitbinglive.</p>
                       </div>
                     </div>
                     <div className="col-5 align-self-end">
                       <img
-                        src="assets/images/profile-img.png"
+                        src={Images.profileImg}
                         alt=""
                         className="img-fluid"
                       />
@@ -99,7 +98,7 @@ const Login = () => {
                       <div className="avatar-md profile-user-wid mb-4">
                         <span className="avatar-title rounded-circle bg-light">
                           <img
-                            src="assets/images/logo-light.svg"
+                            src={Images.icon}
                             alt=""
                             className="rounded-circle"
                             height="34"
@@ -112,7 +111,7 @@ const Login = () => {
                       <div className="avatar-md profile-user-wid mb-4">
                         <span className="avatar-title rounded-circle bg-light">
                           <img
-                            src="assets/images/logo.svg"
+                            src={Images.icon}
                             alt=""
                             className="rounded-circle"
                             height="34"
@@ -178,7 +177,7 @@ const Login = () => {
 
                       <div className="mt-3 d-grid">
                         <button
-                          className="btn btn-primary waves-effect waves-light"
+                          className="hover:!bg-[#FA360A] btn btn-primary waves-effect waves-light"
                           type="submit"
                         >
                           Log In
@@ -186,9 +185,14 @@ const Login = () => {
                       </div>
 
                       <div className="mt-4 text-center">
-                        <Link to="/forget-password" className="text-muted">
-                          <i className="mdi mdi-lock me-1"></i> Forgot your
-                          password?
+                        <Link
+                          to="/forget-password"
+                          className="text-muted hover:!text-[#DF0A0A]"
+                        >
+                          <i className="mdi mdi-lock me-1"></i>{" "}
+                          <span className="hover:font-bold">
+                            Forgot your password?
+                          </span>
                         </Link>
                       </div>
                     </form>
@@ -199,11 +203,11 @@ const Login = () => {
                 <div>
                   <p>
                     Don't have an account?{" "}
-                    <Link to="/register" className="fw-medium text-primary">
+                    <Link to="/register" className="fw-medium text-primarys">
                       Register
                     </Link>
                   </p>
-                  <p>© {new Date().getFullYear()} Probitlive. </p>
+                  <p>© {new Date().getFullYear()} Bitbinglive. </p>
                 </div>
               </div>
             </div>
