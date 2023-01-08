@@ -9,8 +9,8 @@ const TopBanner = () => {
             <div className="col-lg-6 d-xl-block d-none">
               <div className="left">
                 <div className="mail">
-                  <a href="mailto:support@Probitlive.com">
-                    <i className="fal fa-envelope"></i> support@Probitlive.com
+                  <a href="mailto:support@bitbinglive.com">
+                    <i className="fal fa-envelope"></i> support@bitbinglive.com
                   </a>
                 </div>
                 <div className="working-time">
@@ -26,9 +26,9 @@ const TopBanner = () => {
                   <li>
                     <Link to="/about-us">About</Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link to="/blogs">News</Link>
-                  </li>
+                  </li> */}
                   <li>
                     <Link to="/contact">Contact</Link>
                   </li>

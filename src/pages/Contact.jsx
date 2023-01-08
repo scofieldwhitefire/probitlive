@@ -5,8 +5,28 @@ import Sidebar from "components/Sidebar";
 import TopBanner from "components/TopBanner";
 import React from "react";
 import HomeHelmet from "components/Helmets/HomeHelmet";
+import { useState } from "react";
+
+const initial = {
+  name: "",
+  email: "",
+  topic: "",
+  message: "",
+};
 
 const Contact = () => {
+    const [formData, setFormData] = useState(initial);
+    //   const { isAuthenticated } = useSelector((state) => state.user);
+
+    const { name, email, topic, message } = formData;
+
+    const onChange = (e) => {
+      setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const onSubmit = (e) => {
+      e.preventDefault();
+    };
   return (
     <>
       <HomeHelmet title={"Contact Us"} />
@@ -55,8 +75,8 @@ const Contact = () => {
                   </div>
                   <div className="info">
                     <span>Call Us 24/7</span>
-                    <a href="tel:+18475555555">
-                      <h5>+584 (25) 21453</h5>
+                    <a href="tel:+123467809">
+                      <h5>+123 (456) 7890</h5>
                     </a>
                   </div>
                 </div>
@@ -74,9 +94,9 @@ const Contact = () => {
                     <img src={Images.shape02s} alt="" />
                   </div>
                   <div className="info">
-                    <span>MAke A Quote</span>
-                    <a href="mailto:someone@example.com">
-                      <h5>info@finbiz.com</h5>
+                    <span>Have any question?</span>
+                    <a href="mailto:info@bitbinglive.com">
+                      <h5>info@bitbinglive.com</h5>
                     </a>
                   </div>
                 </div>
@@ -96,7 +116,7 @@ const Contact = () => {
                   <div className="info">
                     <span>Service Station</span>
                     <a href="#">
-                      <h5>25 Hilton Street.</h5>
+                      <h5>United States</h5>
                     </a>
                   </div>
                 </div>
@@ -107,31 +127,6 @@ const Contact = () => {
         </div>
       </div>
       {/* <!-- conact single area end --> */}
-      {/* <!-- bizup map area start --> */}
-      <div className="rts-contact-map-area">
-        <div className="contaciner-fluid">
-          <div className="row">
-            <div className="col-12">
-              <div className="contact-map-area-fluid">
-                <iframe
-                  className="contact-map"
-                  src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14602.288851207937!2d90.47855065!3d23.798243149999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1663151706353!5m2!1sen!2sbd"
-                  style={{ border: "0" }}
-                  allowFullScreen=""
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
-                <img
-                  className="location"
-                  src={Images.location}
-                  alt="Business_map"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* <!-- bizup map area end --> */}
       {/* <!-- conact us form fluid start --> */}
       <div className="rts-contact-form-area">
         <div className="container">
@@ -144,36 +139,42 @@ const Contact = () => {
                 </div>
                 <div className="form-wrapper">
                   <div id="form-messages"></div>
-                  <form
-                    id="contact-form"
-                    action="https://reactheme.com/products/html/finbiz/mailer.php"
-                    method="post"
-                  >
+                  <form id="contact-form" onSubmit={onSubmit}>
                     <div className="name-email">
                       <input
                         type="text"
-                        name="name"
                         placeholder="Your Name"
+                        name="name"
+                        onChange={onChange}
+                        value={name}
                         required
                       />
                       <input
                         type="email"
-                        name="email"
                         placeholder="Email Address"
+                        name="email"
+                        onChange={onChange}
+                        value={email}
                         required
                       />
                     </div>
                     <input
                       type="text"
-                      name="subject"
-                      placeholder="Your Subject"
+                      placeholder="Topic"
+                      name="topic"
+                      onChange={onChange}
+                      value={topic}
+                      required
                     />
                     <textarea
                       placeholder="Type Your Message"
                       name="message"
+                      onChange={onChange}
+                      value={message}
+                      required
                     ></textarea>
                     <button type="submit" className="rts-btn btn-primary">
-                      Send Message
+                      Submit Message
                     </button>
                   </form>
                 </div>
