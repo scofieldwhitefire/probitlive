@@ -4,8 +4,9 @@ import { Helmet } from "react-helmet";
 const DashboardHelmet = ({ title }) => {
   const [tit] = useState(title)
   return (
-    <Helmet titleTemplate ="ProBitLive | %s">
-      {/* <body className="home page-template-default page page-id-32 elementor-default elementor-kit-6 elementor-page elementor-page-32" /> */}Tit
+    <Helmet titleTemplate="Bitbinglive | %s">
+      {/* <body className="home page-template-default page page-id-32 elementor-default elementor-kit-6 elementor-page elementor-page-32" /> */}
+      Tit
       <title>{tit}</title>
       <style type="text/css">
         {`
@@ -3907,7 +3908,7 @@ const DashboardHelmet = ({ title }) => {
 `}
       </style>
       <style type="text/css">
-  {`
+        {`
   /*---------------------------
  CSS Index  
 ****************************
@@ -32280,7 +32281,10 @@ p.disc {
   color: var(--color-primary-2);
 }
   `}
-</style>
+      </style>
+      <script>{`
+
+    `}</script>
     </Helmet>
   );
 };

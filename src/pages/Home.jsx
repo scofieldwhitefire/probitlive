@@ -165,20 +165,20 @@ const Home = () => {
                 <p className="pre-title">
                   <span>Welcome!</span>{" "}
                   <i style={{ color: "white", fontStyle: "normal" }}>
-                    Start Growing Your trade Today
+                    Start Growing...
                   </i>
                 </p>
-                <h1 className="title ">
-                  <i style={{ color: "white", fontStyle: "normal" }}>Make</i>{" "}
-                  <span>Business Unique </span> <br />
+                <h1 className="title uppercase">
+                  <span>Grow Your </span>
                   <i style={{ color: "white", fontStyle: "normal" }}>
-                    With Great Ideas
-                  </i>
+                    Portfolio <br /> today.
+                  </i>{" "}
                 </h1>
                 <p className="disc banner-para" style={{ color: "white" }}>
-                  Porttitor ornare fermentum aliquam pharetra facilisis gravida
-                  risus suscipit <br /> Dui feugiat fusce conubia ridiculus
-                  tristique parturient
+                  The most convenient trading interface. Instant access to more
+                  than 100 assets
+                  <br />
+                  All over the world.
                 </p>
                 {isAuthenticated ? (
                   <Link
@@ -209,20 +209,15 @@ const Home = () => {
                 <p className="pre-title">
                   <span>Welcome!</span>{" "}
                   <i style={{ color: "white", fontStyle: "normal" }}>
-                    Start Growing Your trade Today
+                    Start Growing...
                   </i>
                 </p>
-                <h1 className="title ">
-                  <i style={{ color: "white", fontStyle: "normal" }}>Launch</i>{" "}
-                  <span>Ultra Modern </span> <br />
-                  <i style={{ color: "white", fontStyle: "normal" }}>
-                    Effective Business
-                  </i>
+                <h1 className="title uppercase">
+                   An <span>Easy way</span> <br /> To tarde
                 </h1>
-                <p className="disc banner-para" style={{ color: "white" }}>
-                  Porttitor ornare fermentum aliquam pharetra facilisis gravida
-                  risus suscipit <br /> Dui feugiat fusce conubia ridiculus
-                  tristique parturient
+                <p className="disc banner-para">
+                  Trade on the Forex, Crypto and Stock Markets with Ease.<br />
+                  Trading is better with us, Experience the difference.
                 </p>
                 {isAuthenticated ? (
                   <Link
@@ -253,17 +248,22 @@ const Home = () => {
                 <p className="pre-title">
                   <span>Welcome!</span>{" "}
                   <i style={{ color: "white", fontStyle: "normal" }}>
-                    Start Growing Your trade Today
+                    Start Growing...
                   </i>
                 </p>
-                <h1 className="title ">
-                  Make <span>Business Growth</span> <br /> With Next Level
+                <h1 className="title uppercase">
+                  <i style={{ color: "white", fontStyle: "normal" }}>A</i>{" "}
+                  <span>Secure </span>
+                  <i style={{ color: "white", fontStyle: "normal" }}>and</i>
+                  <br />
+                  <span>Reliable </span>
+                  <i style={{ color: "white", fontStyle: "normal" }}>
+                    platform
+                  </i>{" "}
                 </h1>
-                <p className="disc banner-para">
-                  Porttitor ornare fermentum aliquam pharetra facilisis gravida
-                  risus suscipit <br /> Dui feugiat fusce conubia ridiculus
-                  tristique parturient
-                </p>
+                <p className="disc banner-para" style={{ color: "white" }}>
+                  Access all digital assets with our E256 Encryption security level<br />
+                  </p>
                 {isAuthenticated ? (
                   <Link
                     to="/dashboard"
@@ -305,50 +305,6 @@ const Home = () => {
       </div>
       {/* <!-- banner blank space area end --> */}
       <div id="scrollChart"></div>
-      {/* <div class="tradingview-widget-container">
-  <div class="tradingview-widget-container__widget"></div>
-  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-      
-  {
-  "symbols": [
-    {
-      "proName": "FOREXCOM:SPXUSD",
-      "title": "S&P 500"
-    },
-    {
-      "proName": "FOREXCOM:NSXUSD",
-      "title": "US 100"
-    },
-    {
-      "proName": "FX_IDC:EURUSD",
-      "title": "EUR/USD"
-    },
-    {
-      "proName": "BITSTAMP:BTCUSD",
-      "title": "Bitcoin"
-    },
-    {
-      "proName": "BITSTAMP:ETHUSD",
-      "title": "Ethereum"
-    },
-    {
-      "description": "Litecoin",
-      "proName": "BINANCE:LTCUSDT"
-    },
-    {
-      "description": "Xrp",
-      "proName": "BINANCE:XRPUSDT"
-    }
-  ],
-  "showSymbolLogo": true,
-  "colorTheme": "light",
-  "isTransparent": false,
-  "displayMode": "adaptive",
-  "locale": "en"
-}
-  </script>
-</div> */}
-
       {/* <!-- rts about us section start --> */}
       <div className="rts-about-area rts-section-gap bg-about-sm-shape">
         <div className="container">
@@ -1173,12 +1129,8 @@ const Home = () => {
                     <div className="swiper-slide">
                       <div className="testimonial-inner">
                         <p className="disc text-start">
-                          “Consectetur adipiscing elit velit porta sapien purus
-                          erat nec, a ornare laoreet sem gravida accumsan in
-                          commodo aliquet nascetur maecenas. Sem tempus
-                          hendrerit diam mauris leo magna sociosqu viverra,
-                          accumsan massa tristique egestas cum sodales hac
-                          lacinia feugiat scelerisque porttitor”
+                          “Impressive customer services, I can now trade with peace
+                          of mind. Thanks for the high quality performance for traders. Love it”
                         </p>
                         <div className="testimonial-bottom-one">
                           <div className="thumbnail">
@@ -1189,9 +1141,9 @@ const Home = () => {
                           </div>
                           <div className="details">
                             <a href="#">
-                              <h5 className="title">David Smith</h5>
+                              <h5 className="title">Victor Alisson</h5>
                             </a>
-                            <span>JHKL Owner</span>
+                            <span>Investor</span>
                           </div>
                         </div>
                       </div>
@@ -1199,12 +1151,8 @@ const Home = () => {
                     <div className="swiper-slide">
                       <div className="testimonial-inner">
                         <p className="disc text-start">
-                          “Consectetur adipiscing elit velit porta sapien purus
-                          erat nec, a ornare laoreet sem gravida accumsan in
-                          commodo aliquet nascetur maecenas. Sem tempus
-                          hendrerit diam mauris leo magna sociosqu viverra,
-                          accumsan massa tristique egestas cum sodales hac
-                          lacinia feugiat scelerisque porttitor”
+                          “Excellent broker with a very good customer service
+                          and support. Very contented with their services”
                         </p>
                         <div className="testimonial-bottom-one">
                           <div className="thumbnail">
@@ -1215,9 +1163,9 @@ const Home = () => {
                           </div>
                           <div className="details">
                             <a href="#">
-                              <h5 className="title">David Smith</h5>
+                              <h5 className="title">Vanessa Martins</h5>
                             </a>
-                            <span>JHKL Owner</span>
+                            <span>Forex Trader</span>
                           </div>
                         </div>
                       </div>
@@ -1225,12 +1173,9 @@ const Home = () => {
                     <div className="swiper-slide">
                       <div className="testimonial-inner">
                         <p className="disc text-start">
-                          “Consectetur adipiscing elit velit porta sapien purus
-                          erat nec, a ornare laoreet sem gravida accumsan in
-                          commodo aliquet nascetur maecenas. Sem tempus
-                          hendrerit diam mauris leo magna sociosqu viverra,
-                          accumsan massa tristique egestas cum sodales hac
-                          lacinia feugiat scelerisque porttitor”
+                          “Pretty solid so far!. Opening an account was relatively 
+                          quick which was nice, and the spreads are amazing. Highly 
+                          recommend this broker.”
                         </p>
                         <div className="testimonial-bottom-one">
                           <div className="thumbnail">
@@ -1241,9 +1186,9 @@ const Home = () => {
                           </div>
                           <div className="details">
                             <a href="#">
-                              <h5 className="title">David Smith</h5>
+                              <h5 className="title">Diego bacellar</h5>
                             </a>
-                            <span>JHKL Owner</span>
+                            <span>Crypto Expert</span>
                           </div>
                         </div>
                       </div>

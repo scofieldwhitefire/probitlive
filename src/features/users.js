@@ -62,13 +62,32 @@ export const login = createAsyncThunk(
 
 export const Register = createAsyncThunk(
   "users/register",
-  async ({ first_name, last_name, email, username, password }, thunkAPI) => {
+  async (
+    {
+      first_name,
+      last_name,
+      username,
+      email,
+      password,
+      address,
+      city,
+      state,
+      country,
+      zip_code,
+    },
+    thunkAPI
+  ) => {
     const body = {
       first_name,
       last_name,
-      email,
       username,
+      email,
       password,
+      address,
+      city,
+      state,
+      country,
+      zip_code,
     };
 
     try {

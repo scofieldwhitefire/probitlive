@@ -1,6 +1,16 @@
 a {
   text-decoration: none;
 }
+.mobileNav {
+  width: 50px;
+  height: 180px
+}
+
+.IsActive {
+  background: var(--color-primary);
+  transform: translateY(-5px) scale(1.03);
+  color: var(--color-white);
+}
 .mainmenu li.has-droupdown > a::before {
   content: "\f078" !important;
 }
@@ -547,9 +557,9 @@ a {
 .bg-white-feature::after {
   background-image: url(../images/feature/shape/01.png);
 }
-.rts-test-one-image-inner::after {
+/* .rts-test-one-image-inner::after {
   background-image: url(../images/testimonials/shape/01.svg);
-}
+} */
 .rts-test-one-image-inner::before {
   background-image: url(../images/testimonials/shape/02.png);
 }

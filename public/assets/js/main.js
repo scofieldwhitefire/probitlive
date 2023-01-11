@@ -15,7 +15,7 @@
         },
         methods: function (e) {
             imJs.swiperActivation();
-            imJs.vedioActivation();
+            imJs.videoActivation();
             imJs.counterUp();
             imJs.salActive();
             imJs.progressAvtivation();
@@ -619,7 +619,7 @@
         },
 
         
-        vedioActivation: function (e) {
+        videoActivation: function (e) {
           $('#play-video, .play-video').on('click', function (e) {
               e.preventDefault();
               $('#video-overlay, .video-overlay').addClass('open');

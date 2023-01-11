@@ -244,7 +244,7 @@ const About = () => {
                         <button
                           className="accordion-button"
                           type="button"
-                          data-bs-toggle="collapse"
+                          data-bs-toggle="collapsed"
                           data-bs-target="#collapseOne"
                           aria-expanded="true"
                           aria-controls="collapseOne"
@@ -254,11 +254,11 @@ const About = () => {
                       </h2>
                       <div
                         id="collapseOne"
-                        className="accordion-collapse collapse show"
+                        className="accordion-collapse collapse visible show"
                         aria-labelledby="headingOne"
                         data-bs-parent="#accordionExample"
                       >
-                        <div className="accordion-body">
+                        <div className="accordion-body !text-black">
                           We carefully select expert applicants. We get to know them as a trader and examine their trading performance over a period of time. We also tend to look for expert who already have a following to further confirm their competence (social proof). You can also read about every expert on their individual performance pages.
                         </div>
                       </div>
@@ -278,11 +278,11 @@ const About = () => {
                       </h2>
                       <div
                         id="collapseTwo"
-                        className="accordion-collapse collapse"
+                        className="accordion-collapse collapse visible"
                         aria-labelledby="headingTwo"
                         data-bs-parent="#accordionExample"
                       >
-                        <div className="accordion-body">
+                        <div className="accordion-body !text-black">
                           Here is how the copier works: You, as an investor, 
                           simply select an expert or experts that you want to copy trades from. 
                           Once you are signed up, this is the only action needed on your part.<br/>
@@ -318,11 +318,11 @@ const About = () => {
                       </h2>
                       <div
                         id="collapseThree"
-                        className="accordion-collapse collapse"
+                        className="accordion-collapse collapse visible"
                         aria-labelledby="headingThree"
                         data-bs-parent="#accordionExample"
                       >
-                        <div className="accordion-body">
+                        <div className="accordion-body !text-black">
                           When you purchase an Ether mining contract, you buy a share of a GPU (“graphics processing unit“) 
                           to mine Ethereum. The hashing algorithm used to mine Ether is called Ethash (or Dagger-Hashimoto).<br/>
                           Ethash requires the so called DAG file in order to perform the calculations. 
