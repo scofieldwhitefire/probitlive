@@ -2,9 +2,10 @@ import { useState } from "react";
 import { Helmet } from "react-helmet";
 
 const DashboardHelmet = ({ title }) => {
-  const [tit] = useState(title)
+  const [tit] = useState(title);
   return (
-    <Helmet titleTemplate="ProBitLive | %s">
+    <Helmet titleTemplate="Bitbinglive | %s">
+      <body data-sidebar="dark" />
       <title>{tit}</title>
       <style type="text/css">
         {`
@@ -5152,7 +5153,7 @@ fieldset:disabled .btn {
   float: left;
   padding-right: 0.5rem;
   color: #74788d;
-  content: var(--bs-breadcrumb-divider, "https://themesbrand.com/");
+  content: var(--bs-breadcrumb-divider);
 }
 .breadcrumb-item.active {
   color: #74788d;
@@ -16983,11 +16984,17 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before {
 
         `}
       </style>
-      <style type="text/css">
-        {`
-        
-        `}
-      </style>
+      <style>{`
+.numb {
+  -moz-appearance: textfield
+}
+.numb:hover, 
+.numb:focus {
+  -moz-appearance: number-input
+
+} 
+
+    `}</style>
     </Helmet>
   );
 };

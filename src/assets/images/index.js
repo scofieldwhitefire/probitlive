@@ -3,6 +3,8 @@ import logo2 from "./logo/logo-2.svg";
 import logo3 from "./logo/logo-3.svg";
 import logo4 from "./logo/logo-4.svg";
 import logo5 from "./logo/logo-5.svg";
+import logoL from "./logo/logo-white.png";
+import logoD from "./logo/logo-black.png";
 
 import menu from "./icon/menu.png";
 import menuLight from "./icon/menu-light.png";
@@ -119,6 +121,8 @@ export const Logos = {
   logo3,
   logo4,
   logo5,
+  logoL,
+  logoD,
 };
 
 export const Images = {

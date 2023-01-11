@@ -75,9 +75,9 @@ const Contact = () => {
                   </div>
                   <div className="info">
                     <span>Call Us 24/7</span>
-                    <a href="tel:+123467809">
+                    {/* <a href="tel:+123467809">
                       <h5>+123 (456) 7890</h5>
-                    </a>
+                    </a> */}
                   </div>
                 </div>
               </div>
@@ -95,8 +95,8 @@ const Contact = () => {
                   </div>
                   <div className="info">
                     <span>Have any question?</span>
-                    <a href="mailto:info@bitbinglive.com">
-                      <h5>info@bitbinglive.com</h5>
+                    <a href="mailto:support@bitbinglive.com">
+                      <h5>support@bitbinglive.com</h5>
                     </a>
                   </div>
                 </div>
@@ -116,7 +116,9 @@ const Contact = () => {
                   <div className="info">
                     <span>Service Station</span>
                     <a href="#">
-                      <h5>United States</h5>
+                      <h5>
+                        58 Peregrine Road, Hainault, Ilford, Essex IG6 3SZ UK
+                      </h5>
                     </a>
                   </div>
                 </div>

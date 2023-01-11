@@ -13,31 +13,34 @@ const Sidebar = () => {
         {/* <!-- inner menu area desktop start --> */}
         <div className="rts-sidebar-menu-desktop">
           <Link className="logo-1" to="/">
-            {/* <img className="logo" src={Logos.logo1} alt="pro_logo" /> */}
-            <h4 className="text-[28px] lg:text-[32px] font-bold mt-4">
+            <img className="logo" src={Logos.logoD} width="150" height="40" alt="pro_logo" />
+            {/* <h4 className="text-[28px] lg:text-[32px] font-bold mt-4">
               Bitbing<span className="font-light">live</span>
-            </h4>
+            </h4> */}
           </Link>
           <Link className="logo-2" to="/">
-            {/* <img className="logo" src={Logos.logo4} alt="pro_logo" /> */}
-            <h4 className="text-[28px] lg:text-[32px] font-bold mt-4">
+            <img className="logo" src={Logos.logoD} width="150" height="40" alt="pro_logo" />
+            {/* <h4 className="text-[28px] lg:text-[32px] font-bold mt-4">
               Bitbing<span className="font-light">live</span>
-            </h4>
+            </h4> */}
           </Link>
           <Link className="logo-3" to="/">
-            {/* <img className="logo" src={Logos.logo3} alt="pro_logo" /> */}
-            <h4 className="text-[28px] lg:text-[32px] font-bold mt-4">
+            <img className="logo" src={Logos.logoD} width="150" height="40" alt="pro_logo" />
+            {/* <h4 className="text-[28px] lg:text-[32px] font-bold mt-4">
               Bitbing<span className="font-light">live</span>
-            </h4>
+            </h4> */}
           </Link>
           <Link className="logo-4" to="/">
-            {/* <img className="logo" src={Logos.logo5} alt="pro_logo" /> */}
-            <h4 className="text-[28px] lg:text-[32px] font-bold mt-4">
+            <img className="logo" src={Logos.logoD} width="150" height="40" alt="pro_logo" />
+            {/* <h4 className="text-[28px] lg:text-[32px] font-bold mt-4">
               Bitbing<span className="font-light">live</span>
-            </h4>
+            </h4> */}
           </Link>
           <div className="body d-none d-xl-block">
-            <p className="disc">Top crypto investment company</p>
+            <p className="disc">
+              Bitbing<span className="font-light">live</span> Limited, is an officially registered company which
+              gives its clients 100% guarantee.
+            </p>
             <div className="get-in-touch">
               {/* <!-- title --> */}
               <div className="h6 title">Get In Touch</div>

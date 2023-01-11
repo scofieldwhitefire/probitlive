@@ -83,6 +83,11 @@ const Footer = () => {
                       </Link>
                     </li>
                     <li>
+                      <Link to="/about-us">
+                        <i className="far fa-arrow-right"></i> About Us
+                      </Link>
+                    </li>
+                    <li>
                       <Link to="/contact">
                         <i className="far fa-arrow-right"></i> Contact Us
                       </Link>
@@ -93,39 +98,41 @@ const Footer = () => {
                       </Link>
                     </li> */}
                     <li>
-                      <Link to="/cookies">
-                        <i className="far fa-arrow-right"></i> Cookie Policy
+                      <Link to="/terms">
+                        <i className="far fa-arrow-right"></i> Terms and Condition
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/policy">
+                        <i className="far fa-arrow-right"></i> Privacy & Policy
                       </Link>
                     </li>
                   </ul>
                   <ul className="links margin-left-70">
                     <li>
-                      <Link to="/about-us">
-                        <i className="far fa-arrow-right"></i> About Us
+                      <Link to="/copy-trading">
+                        <i className="far fa-arrow-right"></i> Copy Trading
                       </Link>
                     </li>
-                    {isAuthenticated ? (
                       <li>
-                        <Link to="/dashboard">
-                          <i className="far fa-arrow-right"></i> My Dashboard
+                        <Link to="/forex-trading">
+                          <i className="far fa-arrow-right"></i> Forex Trading
                         </Link>
                       </li>
-                    ) : (
                       <li>
-                        <Link to="/login">
-                          <i className="far fa-arrow-right"></i> Login
+                        <Link to="/stock-trading">
+                          <i className="far fa-arrow-right"></i> Stock Trading
                         </Link>
                       </li>
-                    )}
                     <li>
-                      <Link to="/">
-                        <i className="far fa-arrow-right"></i>Service
+                      <Link to="/crypto-trading">
+                        <i className="far fa-arrow-right"></i> Crypto Trading
                       </Link>
                     </li>
                     <li>
-                      <Link to="/">
-                        <i className="far fa-arrow-right"></i>Privacy & Policy
-                      </Link>
+                      <Link to="/options-trading">
+                        <i className="far fa-arrow-right"></i> Options Trading
+                        </Link>
                     </li>
                   </ul>
                 </div>
@@ -163,7 +170,7 @@ const Footer = () => {
             <div className="col-xl-4 col-md-6 col-sm-12 col-12">
               <div className="footer-one-single-wized margin-left-65">
                 <div className="wized-title">
-                  <h5 className="title">Popular Updates</h5>
+                  <h5 className="title">News Updates</h5>
                   <img src={Images.footerundertitle} alt="pro_footer" />
                 </div>
                 <div className="post-wrapper">
@@ -175,16 +182,16 @@ const Footer = () => {
                     <div className="post-right">
                       <p>
                         {" "}
-                        <i className="fal fa-clock"></i> 15th April, 2022
+                        <i className="fal fa-clock"></i> 7th January, 2023.
                       </p>
-                      <a href="blog-details.html">
+                      {/* <a href="blog-details.html"> */}
                         <h6 className="title">
-                          Best Business Ideas For Getting Solution
+                          {" "}
                         </h6>
-                      </a>
-                      <a className="red-more" href="blog-details.html">
+                      {/* </a> */}
+                      {/* <a className="red-more" href="blog-details.html">
                         Read More<i className="far fa-arrow-right"></i>
-                      </a>
+                      </a> */}
                     </div>
                   </div>
                   {/* <!-- single post End --> */}
@@ -196,16 +203,16 @@ const Footer = () => {
                     <div className="post-right">
                       <p>
                         {" "}
-                        <i className="fal fa-clock"></i> 15th April, 2022
+                        <i className="fal fa-clock"></i> 10th January, 2023.
                       </p>
-                      <a href="blog-details.html">
+                      {/* <a href="blog-details.html"> */}
                         <h6 className="title">
-                          Best Business Ideas For Getting Solution
+                          {" "}
                         </h6>
-                      </a>
-                      <a className="red-more" href="blog-details.html">
+                      {/* </a> */}
+                      {/* <a className="red-more" href="blog-details.html">
                         Read More<i className="far fa-arrow-right"></i>
-                      </a>
+                      </a> */}
                     </div>
                   </div>
                   {/* <!-- single post End --> */}
@@ -221,10 +228,10 @@ const Footer = () => {
           <div className="container">
             <div className="row">
               <div className="col-12">
-                <div className="text-center">
+                <div className="text-center font-bold">
                   <p>
-                    Pro<span style={{ color: "#DF0A0A" }}>Bit</span>Live -
-                    Copyright 2022. All rights reserved.
+                    Bitbing<span className="font-light">live</span> - Copyright
+                    2022. All rights reserved.
                   </p>
                 </div>
               </div>

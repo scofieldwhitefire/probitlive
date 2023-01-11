@@ -1,13 +1,13 @@
-import { Images, Logos } from 'assets/images';
+import { Images, Logos } from "assets/images";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { ClientJS } from "clientjs";
 
 const Menu = () => {
   const { isAuthenticated } = useSelector((state) => state.user);
-    const client = new ClientJS();
+  const client = new ClientJS();
 
-    const isMobile = client.isMobile();
+  const isMobile = client.isMobile();
 
   return (
     <>
@@ -17,10 +17,14 @@ const Menu = () => {
             <div className="col-xl-3 col-lg-4 col-md-4 col-sm-4 col-4">
               <div className="thumbnail">
                 <Link to="/">
-                  {/* <img src={Logos.logo1} alt="pro-logo" /> */}
-                  <h4 className="text-[23px] lg:text-[32px] font-bold">
+                  <img
+                    src={Logos.logoD}
+                    alt="pro-logo"
+                    className={`${!isMobile ? "mobileLogo" : ""}`}
+                  />
+                  {/* <h4 className="text-[23px] lg:text-[32px] font-bold">
                     Bitbing<span className="font-light">live</span>
-                  </h4>
+                  </h4> */}
                 </Link>
               </div>
             </div>
@@ -48,11 +52,13 @@ const Menu = () => {
                         Contact
                       </Link>
                     </li>
-                    {isMobile&&(<li>
-                      <Link className="nav-item" to="/about-us">
-                        About Us
-                      </Link>
-                    </li>)}
+                    {isMobile && (
+                      <li>
+                        <Link className="nav-item" to="/about-us">
+                          About Us
+                        </Link>
+                      </li>
+                    )}
                   </ul>
                 </nav>
                 <div className="button-area">
@@ -118,6 +124,6 @@ const Menu = () => {
       </div>
     </>
   );
-}
+};
 
-export default Menu
+export default Menu;
