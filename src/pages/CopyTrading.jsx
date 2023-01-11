@@ -45,64 +45,55 @@ const CopyTrading = () => {
             <div className="col-xl-8 col-md-12 col-sm-12 col-12">
               {/* <!-- service details left area start --> */}
               <div className="service-detials-step-1">
-                <h4 className="title">TRADE TOP CRYPTOCURRENCIES</h4>
-                <div className="flex items-start justify-start border-l-4 border-[#DF0A0A] pt-6 pl-5 my-4 w-auto shadow-sm shadow-[#6a6a6a1a]">
-                  <div className="flex items-center justify-center mr-10 ">
-                    <h6 className="title">
-                      Build Your Crypto Currency Trading Portfolio with Capital
-                      Market live
-                    </h6>
-                  </div>
-                </div>
+                <h4 className="title">COPY EXPERT TRADERS</h4>
                 <p className="disc">
-                  Capital Market live is excited to announce the launch of our
-                  new cryptocurrency trading platform. Now you can start trading
-                  Bitcoin, Ethereum and many more cryptocurrencies quickly,
-                  easily and safely from wherever you are — in just seconds. You
-                  get great margin trading leverage and short sell options with
-                  fast deposits and withdrawals. Our support team is available
-                  24/7/365 to help get you trading on our CySEC-regulated
-                  platform with a trading volume of US $11 billion monthly.
+                  It’s all in the name! Copy trading allows you to directly copy
+                  the positions taken by another trader. You decide the amount
+                  you wish to invest and simply copy everything they do
+                  automatically in real-time – when that trader makes a trade,
+                  your account will make that same trade as well. You do not
+                  need to have any input on the trades, and you get the
+                  identical returns on each trade as your chosen trader. But by
+                  copying another trader, you could potentially make money based
+                  on their skills. In fact, no advanced knowledge of the
+                  financial market is required to take part!.
                 </p>
-                <div className="flex items-start justify-start border-l-4 border-[#DF0A0A] pt-6 pl-5 my-4 w-auto shadow-sm shadow-[#6a6a6a1a]">
-                  <div className="flex items-center justify-center mr-10 ">
-                    <h6 className="title">What is a crypto currency?</h6>
-                  </div>
-                </div>
                 <p className="disc">
-                  A Crypto Currency like bitcoin is a virtual currency traded
-                  peer-to-peer on a blockchain, independent of centralized
-                  authorities like banks and governments. Cryptocurrencies are
-                  entirely virtual, so they are not backed by physical
-                  commodities and have no intrinsic value.
+                  The history of copy trading goes back to 2005 when traders
+                  used to copy specific algorithms that were developed through
+                  automated trading. Brokers recognised the potential of having
+                  systems where any linked to that trader could automatically
+                  copy their trading account. There was no need to constantly
+                  monitor email signals or trading ‘chat’ rooms. We think they
+                  were onto something. Out of this were born services that
+                  allowed traders to connect their personal trading accounts to
+                  their platform. Traders no longer had to submit their specific
+                  strategies. The popularity of copy trading has since exploded.
                 </p>
-                <div className="flex items-start justify-start border-l-4 border-[#DF0A0A] pt-6 pl-5 my-4 w-auto shadow-sm shadow-[#6a6a6a1a]">
-                  <div className="flex items-center justify-center mr-10 ">
-                    <h6 className="title">How Do Cryptocurrencies Work?</h6>
-                  </div>
-                </div>
                 <p className="disc">
-                  Primarily, cryptocurrencies rely on blockchain technology to
-                  complete a transaction via an intricate P2P network. Once a
-                  transfer request is entered into the network, it is validated
-                  by the network and added to a pool of other transactions to
-                  create a block of data for the ledger, which is then entered
-                  into the existing blockchain. Once the block is successfully
-                  added to the chain, the transaction is approved and completed.
+                  1 in 3 say a traditional stock market approach is over-complex
+                  and this can be simplified by automatically following traders.
+                  1 in 4 investors said they were considering Copy trading last
+                  year.
                 </p>
-                <div className="flex items-start justify-start border-l-4 border-[#DF0A0A] pt-6 pl-5 my-4 w-auto shadow-sm shadow-[#6a6a6a1a]">
-                  <div className="flex items-center justify-center mr-10 ">
-                    <h6 className="title">
-                      Are There Investment Opportunities with Cryptocurrencies?
-                    </h6>
-                  </div>
-                </div>
                 <p className="disc">
-                  Absolutely. Cryptocurrencies have become established
-                  investment commodities among major financial institutions and
-                  have even been adopted by countries such as Australia and
-                  Japan. As with any investment though, there are risks linked
-                  to market movements, high volatility and economics.
+                  Here is how the copier works: You, as an investor, simply
+                  select an expert or experts that you want to copy trades from.
+                  Once you are signed up, this is the only action needed on your
+                  part.
+                </p>
+                <p className="disc">
+                  Once you’ve taken care of the above, you are all set. There
+                  are no codes that you need to run or signals for you to
+                  manually input. Our software will handle the trade copying
+                  automatically on your behalf. We monitor your experts trading
+                  activity and as soon as there is a trade, we calculate all the
+                  necessary parameters and execute the trade.
+                </p>
+                <p className="disc">
+                  The only thing you have to make sure of is that you have
+                  enough funds available in your trading account. When the
+                  expert exits a position, you too will exit it. Automatically.
                 </p>
               </div>
             </div>

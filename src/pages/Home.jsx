@@ -168,7 +168,7 @@ const Home = () => {
                     Start Growing...
                   </i>
                 </p>
-                <h1 className="title uppercase">
+                <h1 className="title uppercase font-bold">
                   <span>Grow Your </span>
                   <i style={{ color: "white", fontStyle: "normal" }}>
                     Portfolio <br /> today.
@@ -212,7 +212,7 @@ const Home = () => {
                     Start Growing...
                   </i>
                 </p>
-                <h1 className="title uppercase">
+                <h1 className="title uppercase font-bold">
                    An <span>Easy way</span> <br /> To tarde
                 </h1>
                 <p className="disc banner-para">
@@ -251,7 +251,7 @@ const Home = () => {
                     Start Growing...
                   </i>
                 </p>
-                <h1 className="title uppercase">
+                <h1 className="title uppercase font-bold">
                   <i style={{ color: "white", fontStyle: "normal" }}>A</i>{" "}
                   <span>Secure </span>
                   <i style={{ color: "white", fontStyle: "normal" }}>and</i>
