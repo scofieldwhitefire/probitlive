@@ -26,6 +26,7 @@ import CopyTrading from "pages/CopyTrading";
 import ForexTrading from "pages/ForexTrading";
 import StockTrading from "pages/StockTrading";
 import CryptoTrading from "pages/CryptoTrading";
+import OptionsTrading from "pages/OptionsTrading";
 import Terms from "pages/Terms";
 import Policy from "pages/Policy";
 
@@ -57,6 +58,8 @@ const js3 = [
   { path: "js/dashboard/js/pages", file: "dashboard.init.js" },
   { path: "js/dashboard/js", file: "app.js" },
 ];
+
+const jsx = [{ path: "js", file: "init2.js" }];
 
 const App = () => {
   const dispatch = useDispatch();
@@ -92,6 +95,11 @@ const App = () => {
       for (let i = 0; i < js.length; i++) {
         AddScript(js[i].path, js[i].file);
       }
+      if (location.pathname.includes("-trading")) {
+        for (let i = 0; i < jsx.length; i++) {
+        AddScript(jsx[i].path, jsx[i].file);
+        }
+      }
     }
   }, [location]);
 
@@ -114,7 +122,7 @@ const App = () => {
         <Route path="/forex-trading" element={<ForexTrading />} />
         <Route path="/stock-trading" element={<StockTrading />} />
         <Route path="/crypto-trading" element={<CryptoTrading />} />
-        <Route path="/options-trading" element={<CryptoTrading />} />
+        <Route path="/options-trading" element={<OptionsTrading />} />
         {/* T&C / Policies */}
         <Route path="/terms" element={<Terms />} />
         <Route path="/policy" element={<Policy />} />

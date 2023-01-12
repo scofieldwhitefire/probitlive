@@ -20,7 +20,7 @@ const Menu = () => {
                   <img
                     src={Logos.logoD}
                     alt="pro-logo"
-                    className={`${!isMobile ? "mobileLogo" : ""}`}
+                    className={`${!isMobile ? "w-[180px] h-[50px]" : ""}`}
                   />
                   {/* <h4 className="text-[23px] lg:text-[32px] font-bold">
                     Bitbing<span className="font-light">live</span>
@@ -45,6 +45,11 @@ const Menu = () => {
                     <li>
                       <Link className="nav-item" to="/faqs">
                         FAQs
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="nav-item" to="/about-us">
+                        About Us
                       </Link>
                     </li>
                     <li>

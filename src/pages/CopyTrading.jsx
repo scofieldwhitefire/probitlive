@@ -4,8 +4,13 @@ import Sidebar from "components/Sidebar";
 import TopBanner from "components/TopBanner";
 import HomeHelmet from "components/Helmets/HomeHelmet";
 import UsefulLinks from "components/UsefulLinks";
+import { useEffect, useState } from "react";
 
 const CopyTrading = () => {
+  const [ch] = useState(!1)
+  useEffect(() => {
+    document.getElementById("anywhere-home").click();
+  }, [ch])
   return (
     <>
       <HomeHelmet title={"Copy Trading"} />
