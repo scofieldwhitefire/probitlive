@@ -174,7 +174,7 @@ const Login = () => {
                     <div className="col-5 align-self-end lg:h-[130px] lg:flex lg:items-end lg:justify-end">
                       <img
                         src={Images.profileImg}
-                        alt=""
+                        alt="illustration"
                         className="img-fluid"
                       />
                     </div>
