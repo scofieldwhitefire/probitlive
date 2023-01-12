@@ -95,8 +95,8 @@ const App = () => {
       for (let i = 0; i < js.length; i++) {
         AddScript(js[i].path, js[i].file);
       }
-      if (location.pathname.includes("/-trading")) {
-        for (let i = 0; i < js.length; i++) {
+      if (location.pathname.includes("-trading")) {
+        for (let i = 0; i < jsx.length; i++) {
         AddScript(jsx[i].path, jsx[i].file);
         }
       }
