@@ -75,9 +75,9 @@ const Contact = () => {
                   </div>
                   <div className="info">
                     <span>Call Us 24/7</span>
-                    {/* <a href="tel:+123467809">
-                      <h5>+123 (456) 7890</h5>
-                    </a> */}
+                    <a href="tel:+15616231490">
+                      <h5>+1 (561) 623 1490</h5>
+                    </a>
                   </div>
                 </div>
               </div>

@@ -1135,14 +1135,12 @@ const Home = () => {
                         <div className="testimonial-bottom-one">
                           <div className="thumbnail">
                             <img
-                              src={Images.testimonials02}
+                              src={Images.testimonials21}
                               alt="business-testimonials"
                             />
                           </div>
                           <div className="details">
-                            <a href="#">
-                              <h5 className="title">Victor Alisson</h5>
-                            </a>
+                              <h5 className="title text-[#DF0A0A]">Victor Alisson</h5>
                             <span>Investor</span>
                           </div>
                         </div>
@@ -1157,14 +1155,12 @@ const Home = () => {
                         <div className="testimonial-bottom-one">
                           <div className="thumbnail">
                             <img
-                              src={Images.testimonials02}
+                              src={Images.testimonials22}
                               alt="business-testimonials"
                             />
                           </div>
                           <div className="details">
-                            <a href="#">
-                              <h5 className="title">Vanessa Martins</h5>
-                            </a>
+                              <h5 className="title text-[#DF0A0A]">Vanessa Martins</h5>
                             <span>Forex Trader</span>
                           </div>
                         </div>
@@ -1180,14 +1176,12 @@ const Home = () => {
                         <div className="testimonial-bottom-one">
                           <div className="thumbnail">
                             <img
-                              src={Images.testimonials02}
+                              src={Images.testimonials23}
                               alt="business-testimonials"
                             />
                           </div>
                           <div className="details">
-                            <a href="#">
-                              <h5 className="title">Diego bacellar</h5>
-                            </a>
+                              <h5 className="title text-[#DF0A0A]">Diego bacellar</h5>
                             <span>Crypto Expert</span>
                           </div>
                         </div>

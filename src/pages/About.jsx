@@ -364,20 +364,17 @@ const About = () => {
               <div className="testimopnial-wrapper-two">
                 <div className="test-header">
                   <div className="thumbnail">
-                    <img src={Images.testimonials02} alt="" />
+                    <img src={Images.testimonials22} alt="" />
                   </div>
                   <div className="name-desig">
-                    <h5 className="title">David Smith</h5>
-                    <span className="designation">Business Expert</span>
+                    <h5 className="title">Vanessa Martins</h5>
+                    <span className="designation">Forex Trade</span>
                   </div>
                 </div>
                 <div className="test-body">
                   <p className="disc">
-                    “Parallel task user friendly convergence through supply are
-                    chains type siflify reliable meta provide service visionary
-                    sources unleash tactical thinking via granular intellectual
-                    capital architect dynamic information value online business
-                    solution services”
+                    “Excellent broker with a very good customer service
+                          and support. Very contented with their services”
                   </p>
                 </div>
               </div>
@@ -386,20 +383,18 @@ const About = () => {
               <div className="testimopnial-wrapper-two">
                 <div className="test-header">
                   <div className="thumbnail">
-                    <img src={Images.testimonials03} alt="" />
+                    <img src={Images.testimonials23} alt="" />
                   </div>
                   <div className="name-desig">
-                    <h5 className="title">David Smith</h5>
-                    <span className="designation">Business Expert</span>
+                    <h5 className="title">Diego bacellar</h5>
+                    <span className="designation">Crypto Expert</span>
                   </div>
                 </div>
                 <div className="test-body">
                   <p className="disc">
-                    “Parallel task user friendly convergence through supply are
-                    chains type siflify reliable meta provide service visionary
-                    sources unleash tactical thinking via granular intellectual
-                    capital architect dynamic information value online business
-                    solution services”
+                    “Pretty solid so far!. Opening an account was relatively 
+                          quick which was nice, and the spreads are amazing. Highly 
+                          recommend this broker.”
                   </p>
                 </div>
               </div>

@@ -55,6 +55,9 @@ import feature011 from "./feature/011.png";
 import testimonials01 from "./testimonials/01.png";
 import testimonials02 from "./testimonials/02.png";
 import testimonials03 from "./testimonials/03.png";
+import testimonials21 from "./testimonials/21.png";
+import testimonials22 from "./testimonials/22.png";
+import testimonials23 from "./testimonials/23.png";
 import blog01 from "./blog/01.jpg";
 import blog02 from "./blog/02.jpg";
 import blog03 from "./blog/03.jpg";
@@ -175,6 +178,9 @@ export const Images = {
   testimonials01,
   testimonials02,
   testimonials03,
+  testimonials21,
+  testimonials22,
+  testimonials23,
   blog01,
   blog02,
   blog03,

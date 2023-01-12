@@ -49,7 +49,7 @@ const Sidebar = () => {
                 {/* <!-- single --> */}
                 <div className="single">
                   <i className="fas fa-phone-alt"></i>
-                  <a href="#">+123456789</a>
+                  <a href="tel:+15616231490">+1 (561) 623 1490</a>
                 </div>
                 {/* <!-- single ENd --> */}
                 {/* <!-- single --> */}
@@ -61,14 +61,14 @@ const Sidebar = () => {
                 {/* <!-- single --> */}
                 <div className="single">
                   <i className="fas fa-globe"></i>
-                  <a href="#">www.bitbinglive.com</a>
+                  <a href="#">bitbinglive.com</a>
                 </div>
                 {/* <!-- single ENd --> */}
                 {/* <!-- single --> */}
-                {/* <div className="single">
+                <div className="single">
                   <i className="fas fa-map-marker-alt"></i>
-                  <a href="#">13/A, New Pro State, NYC</a>
-                </div> */}
+                  <a href="#">58 Peregrine Road, Hainault, Ilford, Essex IG6 3SZ UK</a>
+                </div>
                 {/* <!-- single ENd --> */}
               </div>
               <div className="social-wrapper-two menu">
@@ -99,6 +99,9 @@ const Sidebar = () => {
                 </li> */}
                 <li>
                   <Link to="/faqs">FAQs</Link>
+                </li>
+                <li>
+                  <Link to="/about-us">About US</Link>
                 </li>
                 {/* <li>
                   <Link to="/blogs">Blog</Link>
